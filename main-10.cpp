@@ -11,7 +11,7 @@ using namespace std;
 
 int main()
 {
-    lineType line1, line2;
+
     line1 = lineType(1,2,3);
     line2 = lineType(7,4,5);
 
