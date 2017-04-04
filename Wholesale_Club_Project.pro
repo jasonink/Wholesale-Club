@@ -17,6 +17,7 @@ SOURCES += main.cpp\
     memberlist.cpp
 
 HEADERS  += mainwindow.h \
+    linkedlist.h \
     memberlist.h
 
 FORMS    += mainwindow.ui

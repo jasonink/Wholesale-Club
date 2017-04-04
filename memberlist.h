@@ -1,37 +1,23 @@
 #ifndef MEMBERLIST_H
 #define MEMBERLIST_H
+#include <linkedlist.h>
 
-struct MemberList
-{
+struct MemberNode{
+
     std::string name;
     int id;
-    std::string type;
+    int type;
     std::string expiration_date;
+
+    MemberNode(std::string n, int i, int t, std::string ex): name(n), id(i), type(t), expiration_date(ex) {}
 };
 
-struct MemberNode
-{
-    MemberList data;
-    IntNode *next;
-    IntNode *prev;
-    IntNode( int data ) : data(data), next(0), prev(0) {}
-};
+class MemberList{
 
-class MemberList
-{
+
 private:
-    IntNode* head;
-    IntNode* tail;
-public:
-    MemberList();
-    ~MemberList();
+    LinkedList<MemberNode> list;
 
-    void display() const;
-    void push_front(int value);
-    void pop_front();
-    void push_back(int value);
-    void pop_back();
-    bool remove(int value);
 };
 
 #endif // MEMBERLIST_H
