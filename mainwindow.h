@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <memberlist.h>
 
 namespace Ui {
 class MainWindow;
@@ -15,8 +16,13 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+public slots:
+
+    void listMembers();
+
 private:
     Ui::MainWindow *ui;
+    MemberList list;
 };
 
 #endif // MAINWINDOW_H

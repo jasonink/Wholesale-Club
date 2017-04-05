@@ -5,7 +5,6 @@
 #include <iostream>
 
 
-
 //Node class definition
 template<typename E>
 struct Node{
@@ -31,6 +30,8 @@ class LinkedList
         //Accessors----------------------------------------------
         void display() const;
         bool isEmpty() const;
+        int length() const;
+        E get_nth(int i) const;
 
         //Mutators-----------------------------------------------
         void push_front(const E& value);
@@ -39,12 +40,14 @@ class LinkedList
         void insert_sorted(const E& value);
         void remove_duplicates();
 
+
         //Operators----------------------------------------------
         LinkedList & operator=(const LinkedList<E> &source);
 
 private:
         //Helper functions-------------------------------------
         void emptyList();
+        int countNodes(Node<E>* ptr) const;
 
 };
 
@@ -161,12 +164,12 @@ void LinkedList<E>::display() const
  *      returns the number of nodes in the list using the countNodes function
  *
 ************************************************************************/
-/*
-int LinkedList::length() const
+template <typename E>
+int LinkedList<E>::length() const
 {
     return countNodes(head);
 }
-*/
+
 
 
 /************************************************************************
@@ -404,6 +407,20 @@ void LinkedList<E>::remove_duplicates()
     }
 }
 
+template <typename E>
+E LinkedList<E>::get_nth(int i) const
+{
+    Node<E>* temp = head;
+    int count = 0;
+
+    while (count < i && temp != tail){
+        temp = temp->next;
+        i++;
+    }
+
+    return temp->data;
+}
+
 
 //PRIVATE MEMBER FUNCTIONS
 
@@ -420,17 +437,19 @@ void LinkedList<E>::remove_duplicates()
  *      returns number of nodes in the list
  *
 ************************************************************************/
-/*
-int LinkedList::countNodes(Node<E> ptr) const
+template <typename E>
+int LinkedList<E>::countNodes(Node<E>* ptr) const
 {
-    if (ptr != NULL){
-        return 1 + countNodes(ptr->next);
+    int count = 1;
+    Node<E>* temp = ptr;
+
+    while (temp != tail){
+        temp = temp->next;
+        count++;
     }
-    else {
-        return 0;
-    }
+    return count;
 }
-*/
+
 
 /************************************************************************
  * showReverse
