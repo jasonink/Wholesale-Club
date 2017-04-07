@@ -67,7 +67,8 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(833, 624);
+        MainWindow->setEnabled(true);
+        MainWindow->resize(1000, 624);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         Title = new QLabel(centralWidget);
@@ -177,7 +178,7 @@ public:
         pushButton_2->setGeometry(QRect(30, 530, 113, 32));
         tableWidget = new QTableWidget(centralWidget);
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
-        tableWidget->setGeometry(QRect(340, 90, 461, 441));
+        tableWidget->setGeometry(QRect(340, 90, 631, 441));
         MainWindow->setCentralWidget(centralWidget);
         itemGBox->raise();
         memberGroupBox->raise();
@@ -194,7 +195,7 @@ public:
         MainWindow->setStatusBar(statusBar);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 833, 22));
+        menuBar->setGeometry(QRect(0, 0, 1000, 22));
         MainWindow->setMenuBar(menuBar);
 
         retranslateUi(MainWindow);

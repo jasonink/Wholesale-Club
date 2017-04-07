@@ -56,7 +56,8 @@ void MemberList::init_from_file(std::string filename)
 
 Member MemberList::getMember(int n) const
 {
-    return list.get_nth(n);
+    Member test = list.get_n(n);
+    return test;
 }
 
 int MemberList::length() const

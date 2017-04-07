@@ -31,7 +31,7 @@ class LinkedList
         void display() const;
         bool isEmpty() const;
         int length() const;
-        E get_nth(int i) const;
+        E get_n(int i) const;
 
         //Mutators-----------------------------------------------
         void push_front(const E& value);
@@ -408,14 +408,14 @@ void LinkedList<E>::remove_duplicates()
 }
 
 template <typename E>
-E LinkedList<E>::get_nth(int i) const
+E LinkedList<E>::get_n(int i) const
 {
     Node<E>* temp = head;
     int count = 0;
 
-    while (count < i && temp != tail){
+    while (count < i){
         temp = temp->next;
-        i++;
+        count++;
     }
 
     return temp->data;

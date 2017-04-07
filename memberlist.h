@@ -19,7 +19,7 @@ struct Member{
         name(n), id(i), type(t), exp_month(m), exp_day(d), exp_year(y), total_spent(spent), rebate(rb) {}
 };
 
-class MemberList{
+class MemberList {
 
 public:
     MemberList();
