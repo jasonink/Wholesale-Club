@@ -17,8 +17,10 @@ public:
     ~MainWindow();
 
 public slots:
-
     void listMembers();
+    void tableClear();
+    void addMember();
+    void deleteMember();
 
 private:
     Ui::MainWindow *ui;
