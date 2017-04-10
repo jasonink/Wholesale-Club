@@ -51,12 +51,16 @@ OBJECTS_DIR   = ./
 SOURCES       = main.cpp \
 		mainwindow.cpp \
 		memberlist.cpp \
-		addmemberwindow.cpp moc_mainwindow.cpp \
+		addmemberwindow.cpp \
+		itemlist.cpp \
+		date.cpp moc_mainwindow.cpp \
 		moc_addmemberwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		memberlist.o \
 		addmemberwindow.o \
+		itemlist.o \
+		date.o \
 		moc_mainwindow.o \
 		moc_addmemberwindow.o
 DIST          = warehouse_shoppers.txt \
@@ -196,6 +200,7 @@ DIST          = warehouse_shoppers.txt \
 		../../../../Qt/5.7/clang_64/mkspecs/features/qt_config.prf \
 		../../../../Qt/5.7/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../../Qt/5.7/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../../Qt/5.7/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/5.7/clang_64/mkspecs/features/default_pre.prf \
 		../../../../Qt/5.7/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -221,10 +226,14 @@ DIST          = warehouse_shoppers.txt \
 		Wholesale_Club_Project.pro mainwindow.h \
 		linkedlist.h \
 		memberlist.h \
-		addmemberwindow.h main.cpp \
+		addmemberwindow.h \
+		itemlist.h \
+		date.h main.cpp \
 		mainwindow.cpp \
 		memberlist.cpp \
-		addmemberwindow.cpp
+		addmemberwindow.cpp \
+		itemlist.cpp \
+		date.cpp
 QMAKE_TARGET  = Wholesale_Club_Project
 DESTDIR       = 
 TARGET        = Wholesale_Club_Project.app/Contents/MacOS/Wholesale_Club_Project
@@ -373,6 +382,7 @@ Makefile: Wholesale_Club_Project.pro ../../../../Qt/5.7/clang_64/mkspecs/macx-cl
 		../../../../Qt/5.7/clang_64/mkspecs/features/qt_config.prf \
 		../../../../Qt/5.7/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../../Qt/5.7/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../../Qt/5.7/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/5.7/clang_64/mkspecs/features/default_pre.prf \
 		../../../../Qt/5.7/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -536,6 +546,7 @@ Makefile: Wholesale_Club_Project.pro ../../../../Qt/5.7/clang_64/mkspecs/macx-cl
 ../../../../Qt/5.7/clang_64/mkspecs/features/qt_config.prf:
 ../../../../Qt/5.7/clang_64/mkspecs/macx-clang/qmake.conf:
 ../../../../Qt/5.7/clang_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../../Qt/5.7/clang_64/mkspecs/features/exclusive_builds.prf:
 ../../../../Qt/5.7/clang_64/mkspecs/features/default_pre.prf:
 ../../../../Qt/5.7/clang_64/mkspecs/features/mac/default_pre.prf:
@@ -591,8 +602,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.h linkedlist.h memberlist.h addmemberwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp memberlist.cpp addmemberwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.h linkedlist.h memberlist.h addmemberwindow.h itemlist.h date.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp memberlist.cpp addmemberwindow.cpp itemlist.cpp date.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui addmemberwindow.ui $(DISTDIR)/
 
 
@@ -624,6 +635,8 @@ compiler_moc_header_clean:
 	-$(DEL_FILE) moc_mainwindow.cpp moc_addmemberwindow.cpp
 moc_mainwindow.cpp: ../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		memberlist.h \
+		linkedlist.h \
 		mainwindow.h \
 		../../../../Qt/5.7/clang_64/bin/moc
 	/Users/Jason/Qt/5.7/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/Jason/Qt/5.7/clang_64/mkspecs/macx-clang -I/Users/Jason/Documents/School/QT/Wholesale-Club -I/Users/Jason/Qt/5.7/clang_64/lib/QtWidgets.framework/Headers -I/Users/Jason/Qt/5.7/clang_64/lib/QtGui.framework/Headers -I/Users/Jason/Qt/5.7/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/usr/local/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/usr/include -I'/System/Library/Frameworks (framework directory)' -I'/Library/Frameworks (framework directory)' -F/Users/Jason/Qt/5.7/clang_64/lib mainwindow.h -o moc_mainwindow.cpp
@@ -662,15 +675,17 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 main.o: main.cpp mainwindow.h \
 		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/QApplication \
-		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
 		memberlist.h \
-		linkedlist.h
+		linkedlist.h \
+		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/QApplication \
+		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		memberlist.h \
+		linkedlist.h \
 		ui_mainwindow.h \
 		addmemberwindow.h \
 		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/QDialog \
@@ -686,6 +701,13 @@ addmemberwindow.o: addmemberwindow.cpp addmemberwindow.h \
 		../../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		ui_addmemberwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o addmemberwindow.o addmemberwindow.cpp
+
+itemlist.o: itemlist.cpp itemlist.h \
+		linkedlist.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o itemlist.o itemlist.cpp
+
+date.o: date.cpp date.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o date.o date.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

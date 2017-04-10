@@ -117,17 +117,7 @@ LinkedList<E>::LinkedList(const LinkedList<E> &source)
 template <typename E>
 LinkedList<E>::~LinkedList()
 {
-    if (head == 0){
-    }
-    else{
-        Node<E>*temp;
-        for(temp = head; head != 0; temp = head){
-            head = temp->next;
-            delete temp;
-        }
-        head = 0;
-        tail = 0;
-    }
+    emptyList();
 }
 
 //ACCESSORS

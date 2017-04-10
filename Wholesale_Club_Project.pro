@@ -15,15 +15,16 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     memberlist.cpp \
-    addmemberwindow.cpp
+    itemlist.cpp \
+    date.cpp
 
 HEADERS  += mainwindow.h \
     linkedlist.h \
     memberlist.h \
-    addmemberwindow.h
+    itemlist.h \
+    date.h
 
-FORMS    += mainwindow.ui \
-    addmemberwindow.ui
+FORMS    += mainwindow.ui
 
 DISTFILES += \
     warehouse_shoppers.txt

@@ -38,7 +38,7 @@
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>PBAndJ WholeSale xD</string>
+     <string>PBAndJ Wholesale xD</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>

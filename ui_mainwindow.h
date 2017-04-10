@@ -208,7 +208,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        Title->setText(QApplication::translate("MainWindow", "PBAndJ WholeSale xD", 0));
+        Title->setText(QApplication::translate("MainWindow", "PBAndJ Wholesale xD", 0));
         memberGroupBox->setTitle(QApplication::translate("MainWindow", "Membership Information", 0));
         deleteMemberButton->setText(QApplication::translate("MainWindow", "Delete Member", 0));
         addMemberButton->setText(QApplication::translate("MainWindow", "Add Member", 0));
