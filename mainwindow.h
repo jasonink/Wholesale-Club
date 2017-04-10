@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <memberlist.h>
+#include <itemlist.h>
 
 namespace Ui {
 class MainWindow;
@@ -16,6 +17,9 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+private:
+    void get_items_from_file(std::string directory);
+
 public slots:
     void listMembers();
     void tableClear();
@@ -24,7 +28,8 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
-    MemberList list;
+    MemberList member_list;
+    LinkedList<ItemList> item_lists;
 };
 
 #endif // MAINWINDOW_H

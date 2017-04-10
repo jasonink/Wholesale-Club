@@ -50,7 +50,7 @@ void MemberList::init_from_file(std::string filename)
 
         }
     }
-
+    ifile.clear();
     ifile.close();
 }
 

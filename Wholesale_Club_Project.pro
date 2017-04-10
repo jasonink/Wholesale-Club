@@ -14,14 +14,17 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    memberlist.cpp
+    memberlist.cpp \
+    date.cpp \
+    itemlist.cpp
 
 HEADERS  += mainwindow.h \
     linkedlist.h \
-    memberlist.h
+    memberlist.h \
+    date.h \
+    itemlist.h
 
-FORMS    += mainwindow.ui \
-    addmemberwindow.ui
+FORMS    += mainwindow.ui
 
 DISTFILES += \
     warehouse_shoppers.txt
