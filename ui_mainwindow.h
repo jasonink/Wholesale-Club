@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.3.1
+** Created by: Qt User Interface Compiler version 5.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -22,6 +22,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -32,7 +33,6 @@ class Ui_MainWindow
 public:
     QWidget *centralWidget;
     QLabel *Title;
-    QPlainTextEdit *DisplayBox;
     QGroupBox *memberGroupBox;
     QPushButton *deleteMemberButton;
     QPushButton *addMemberButton;
@@ -56,6 +56,9 @@ public:
     QPushButton *viewReportButton;
     QPlainTextEdit *plainTextEdit;
     QLabel *dateLabel;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
+    QTableWidget *tableWidget;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
     QMenuBar *menuBar;
@@ -64,7 +67,8 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(833, 601);
+        MainWindow->setEnabled(true);
+        MainWindow->resize(1000, 624);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         Title = new QLabel(centralWidget);
@@ -78,12 +82,6 @@ public:
         Title->setFont(font);
         Title->setFocusPolicy(Qt::NoFocus);
         Title->setAlignment(Qt::AlignCenter);
-        DisplayBox = new QPlainTextEdit(centralWidget);
-        DisplayBox->setObjectName(QStringLiteral("DisplayBox"));
-        DisplayBox->setGeometry(QRect(340, 70, 471, 461));
-        DisplayBox->setFrameShape(QFrame::Box);
-        DisplayBox->setFrameShadow(QFrame::Plain);
-        DisplayBox->setReadOnly(true);
         memberGroupBox = new QGroupBox(centralWidget);
         memberGroupBox->setObjectName(QStringLiteral("memberGroupBox"));
         memberGroupBox->setGeometry(QRect(20, 80, 301, 251));
@@ -156,13 +154,13 @@ public:
         groupBox->setGeometry(QRect(20, 440, 301, 91));
         rebateButton = new QPushButton(groupBox);
         rebateButton->setObjectName(QStringLiteral("rebateButton"));
-        rebateButton->setGeometry(QRect(190, 13, 100, 20));
+        rebateButton->setGeometry(QRect(170, 10, 121, 20));
         totalPurchasesButton = new QPushButton(groupBox);
         totalPurchasesButton->setObjectName(QStringLiteral("totalPurchasesButton"));
-        totalPurchasesButton->setGeometry(QRect(190, 38, 100, 20));
+        totalPurchasesButton->setGeometry(QRect(169, 38, 121, 20));
         viewReportButton = new QPushButton(groupBox);
         viewReportButton->setObjectName(QStringLiteral("viewReportButton"));
-        viewReportButton->setGeometry(QRect(190, 63, 100, 20));
+        viewReportButton->setGeometry(QRect(169, 63, 121, 20));
         plainTextEdit = new QPlainTextEdit(groupBox);
         plainTextEdit->setObjectName(QStringLiteral("plainTextEdit"));
         plainTextEdit->setGeometry(QRect(70, 20, 91, 21));
@@ -172,25 +170,37 @@ public:
         dateLabel->setObjectName(QStringLiteral("dateLabel"));
         dateLabel->setGeometry(QRect(20, 21, 46, 15));
         dateLabel->setFont(font1);
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(500, 60, 161, 32));
+        pushButton_2 = new QPushButton(centralWidget);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(30, 530, 113, 32));
+        tableWidget = new QTableWidget(centralWidget);
+        tableWidget->setObjectName(QStringLiteral("tableWidget"));
+        tableWidget->setGeometry(QRect(340, 90, 631, 441));
         MainWindow->setCentralWidget(centralWidget);
         itemGBox->raise();
         memberGroupBox->raise();
         Title->raise();
-        DisplayBox->raise();
         groupBox->raise();
+        pushButton->raise();
+        pushButton_2->raise();
+        tableWidget->raise();
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
-        MainWindow->insertToolBarBreak(mainToolBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 833, 21));
+        menuBar->setGeometry(QRect(0, 0, 1000, 22));
         MainWindow->setMenuBar(menuBar);
 
         retranslateUi(MainWindow);
+        QObject::connect(pushButton, SIGNAL(clicked()), MainWindow, SLOT(listMembers()));
+        QObject::connect(pushButton_2, SIGNAL(clicked()), MainWindow, SLOT(close()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -198,7 +208,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        Title->setText(QApplication::translate("MainWindow", "PBAndJ WholeSale xD", 0));
+        Title->setText(QApplication::translate("MainWindow", "PBAndJ Wholesale xD", 0));
         memberGroupBox->setTitle(QApplication::translate("MainWindow", "Membership Information", 0));
         deleteMemberButton->setText(QApplication::translate("MainWindow", "Delete Member", 0));
         addMemberButton->setText(QApplication::translate("MainWindow", "Add Member", 0));
@@ -221,6 +231,8 @@ public:
         viewReportButton->setText(QApplication::translate("MainWindow", "View Sales Report", 0));
         plainTextEdit->setPlaceholderText(QApplication::translate("MainWindow", "MM/DD/YYYY", 0));
         dateLabel->setText(QApplication::translate("MainWindow", "Date:", 0));
+        pushButton->setText(QApplication::translate("MainWindow", "Display Members", 0));
+        pushButton_2->setText(QApplication::translate("MainWindow", "Exit", 0));
     } // retranslateUi
 
 };

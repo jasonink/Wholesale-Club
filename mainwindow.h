@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <memberlist.h>
+#include <itemlist.h>
 
 namespace Ui {
 class MainWindow;
@@ -15,20 +17,19 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-public slots:
-    void listMembers();
-    void tableClear();
-    void addMember();
-    void deleteMember();
+private:
+    void get_items_from_file(std::string directory);
 
-=======
->>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1
-=======
->>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1
+public slots:
+
+    void listMembers();
+
 private:
     Ui::MainWindow *ui;
+    MemberList member_list;
+    LinkedList<ItemList> item_lists;
+
+
 };
 
 #endif // MAINWINDOW_H
