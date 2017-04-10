@@ -1,12 +1,11 @@
 #ifndef MEMBERLIST_H
 #define MEMBERLIST_H
-#include <linkedlist.h>
-#include <fstream>
 
-struct Member{
-
+struct MemberList
+{
     std::string name;
     int id;
+<<<<<<< HEAD
     //0 = basic, 1 = preferred, -1 = unknown
     int type;
     int exp_month;
@@ -19,14 +18,30 @@ struct Member{
            int d = 0, int y = 0, int spent = 0, int rb = 0):
            name(n), id(i), type(t), exp_month(m), exp_day(d), exp_year(y),
            total_spent(spent), rebate(rb) {}
+=======
+    std::string type;
+    std::string expiration_date;
+>>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1
 };
 
-class MemberList {
+struct MemberNode
+{
+    MemberList data;
+    IntNode *next;
+    IntNode *prev;
+    IntNode( int data ) : data(data), next(0), prev(0) {}
+};
 
+class MemberList
+{
+private:
+    IntNode* head;
+    IntNode* tail;
 public:
     MemberList();
     ~MemberList();
 
+<<<<<<< HEAD
     void init_from_file(std::string filename);
     Member getMember(int n) const;
     int length() const;
@@ -37,6 +52,14 @@ public:
 private:
     LinkedList<Member> list;
 
+=======
+    void display() const;
+    void push_front(int value);
+    void pop_front();
+    void push_back(int value);
+    void pop_back();
+    bool remove(int value);
+>>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1
 };
 
 #endif // MEMBERLIST_H
