@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -87,7 +87,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         Title = new QLabel(centralWidget);
         Title->setObjectName(QStringLiteral("Title"));
-        Title->setGeometry(QRect(500, 10, 351, 51));
+        Title->setGeometry(QRect(400, 10, 511, 51));
         QFont font;
         font.setPointSize(22);
         font.setBold(true);
@@ -257,7 +257,7 @@ public:
         MainWindow->setStatusBar(statusBar);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 997, 21));
+        menuBar->setGeometry(QRect(0, 0, 997, 25));
         MainWindow->setMenuBar(menuBar);
 
         retranslateUi(MainWindow);
@@ -265,6 +265,7 @@ public:
         QObject::connect(pushButton_2, SIGNAL(clicked()), MainWindow, SLOT(close()));
         QObject::connect(clear, SIGNAL(clicked()), MainWindow, SLOT(tableClear()));
         QObject::connect(addMemberButton, SIGNAL(clicked()), MainWindow, SLOT(addMember()));
+        QObject::connect(deleteMemberButton, SIGNAL(clicked()), MainWindow, SLOT(deleteMember()));
 
         tabWidget->setCurrentIndex(0);
 
@@ -285,7 +286,7 @@ public:
         AddNameBox->setPlainText(QString());
         AddNameBox->setPlaceholderText(QApplication::translate("MainWindow", "First Last", 0));
         AddMemberNum->setText(QApplication::translate("MainWindow", "Membership Number:", 0));
-        AddMemberNumBox->setPlaceholderText(QApplication::translate("MainWindow", "######", 0));
+        AddMemberNumBox->setPlaceholderText(QApplication::translate("MainWindow", "#####", 0));
         Namelabel_3->setText(QApplication::translate("MainWindow", "Membership Type:", 0));
         Namelabel_4->setText(QApplication::translate("MainWindow", "Membership Expiration Date:", 0));
         addMemberExpBox->setPlaceholderText(QApplication::translate("MainWindow", "MM/DD/YYYY", 0));
@@ -294,7 +295,7 @@ public:
         pushButton->setText(QApplication::translate("MainWindow", "Display Members", 0));
         groupBox_2->setTitle(QApplication::translate("MainWindow", "Delete Members", 0));
         deleteMemberButton->setText(QApplication::translate("MainWindow", "Delete Member", 0));
-        RemoveMemberNumBox->setPlaceholderText(QApplication::translate("MainWindow", "######", 0));
+        RemoveMemberNumBox->setPlaceholderText(QApplication::translate("MainWindow", "#####", 0));
         RemoveNamelabel->setText(QApplication::translate("MainWindow", "Name:", 0));
         RemoveNameBox->setPlainText(QString());
         RemoveNameBox->setPlaceholderText(QApplication::translate("MainWindow", "First Last", 0));

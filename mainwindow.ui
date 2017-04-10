@@ -20,9 +20,9 @@
    <widget class="QLabel" name="Title">
     <property name="geometry">
      <rect>
-      <x>500</x>
+      <x>400</x>
       <y>10</y>
-      <width>351</width>
+      <width>511</width>
       <height>51</height>
      </rect>
     </property>
@@ -226,7 +226,7 @@
         <enum>Qt::ScrollBarAsNeeded</enum>
        </property>
        <property name="placeholderText">
-        <string>######</string>
+        <string>#####</string>
        </property>
       </widget>
       <widget class="QLabel" name="Namelabel_3">
@@ -365,7 +365,7 @@
         <enum>Qt::ScrollBarAsNeeded</enum>
        </property>
        <property name="placeholderText">
-        <string>######</string>
+        <string>#####</string>
        </property>
       </widget>
       <widget class="QLabel" name="RemoveNamelabel">
@@ -655,7 +655,7 @@
      <x>0</x>
      <y>0</y>
      <width>997</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
@@ -703,7 +703,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>675</x>
-     <y>581</y>
+     <y>606</y>
     </hint>
     <hint type="destinationlabel">
      <x>633</x>
@@ -718,12 +718,28 @@
    <slot>addMember()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>194</x>
-     <y>273</y>
+     <x>196</x>
+     <y>305</y>
     </hint>
     <hint type="destinationlabel">
      <x>376</x>
      <y>291</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>deleteMemberButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>deleteMember()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>171</x>
+     <y>486</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>355</x>
+     <y>586</y>
     </hint>
    </hints>
   </connection>
@@ -732,5 +748,6 @@
   <slot>listMembers()</slot>
   <slot>tableClear()</slot>
   <slot>addMember()</slot>
+  <slot>deleteMember()</slot>
  </slots>
 </ui>
