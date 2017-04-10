@@ -1,7 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include <QMessageBox>
+=======
+>>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1
 =======
 >>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1
 
@@ -11,8 +14,11 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 <<<<<<< HEAD
+<<<<<<< HEAD
     list.init_from_file("shoppers.txt");
 
+=======
+>>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1
 =======
 >>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1
 }
@@ -21,6 +27,7 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 void MainWindow::tableClear()
@@ -119,5 +126,7 @@ void MainWindow::deleteMember()
 {
 
 }
+=======
+>>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1
 =======
 >>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1

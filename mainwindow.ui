@@ -7,8 +7,13 @@
     <x>0</x>
     <y>0</y>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <width>997</width>
     <height>619</height>
+=======
+    <width>833</width>
+    <height>601</height>
+>>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1
 =======
     <width>833</width>
     <height>601</height>
@@ -47,8 +52,11 @@
     </property>
    </widget>
 <<<<<<< HEAD
+<<<<<<< HEAD
    <widget class="QPushButton" name="pushButton_2">
 =======
+=======
+>>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1
    <widget class="QPlainTextEdit" name="DisplayBox">
     <property name="geometry">
      <rect>
@@ -748,6 +756,9 @@
    <zorder>Title</zorder>
    <zorder>DisplayBox</zorder>
    <zorder>groupBox</zorder>
+<<<<<<< HEAD
+>>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1
+=======
 >>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1
   </widget>
   <widget class="QToolBar" name="mainToolBar">
@@ -765,7 +776,11 @@
      <x>0</x>
      <y>0</y>
 <<<<<<< HEAD
+<<<<<<< HEAD
      <width>997</width>
+=======
+     <width>833</width>
+>>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1
 =======
      <width>833</width>
 >>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1
@@ -776,6 +791,7 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
+<<<<<<< HEAD
 <<<<<<< HEAD
  <connections>
   <connection>
@@ -848,6 +864,9 @@
   <slot>tableClear()</slot>
   <slot>addMember()</slot>
  </slots>
+=======
+ <connections/>
+>>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1
 =======
  <connections/>
 >>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1

@@ -50,4 +50,7 @@ HEADERS  += mainwindow.h \
     memberlist.h
 
 FORMS    += mainwindow.ui
+<<<<<<< HEAD
+>>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1
+=======
 >>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1

@@ -6,6 +6,7 @@ struct MemberList
     std::string name;
     int id;
 <<<<<<< HEAD
+<<<<<<< HEAD
     //0 = basic, 1 = preferred, -1 = unknown
     int type;
     int exp_month;
@@ -18,6 +19,10 @@ struct MemberList
            int d = 0, int y = 0, int spent = 0, int rb = 0):
            name(n), id(i), type(t), exp_month(m), exp_day(d), exp_year(y),
            total_spent(spent), rebate(rb) {}
+=======
+    std::string type;
+    std::string expiration_date;
+>>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1
 =======
     std::string type;
     std::string expiration_date;
@@ -42,6 +47,7 @@ public:
     ~MemberList();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     void init_from_file(std::string filename);
     Member getMember(int n) const;
     int length() const;
@@ -53,12 +59,17 @@ private:
     LinkedList<Member> list;
 
 =======
+=======
+>>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1
     void display() const;
     void push_front(int value);
     void pop_front();
     void push_back(int value);
     void pop_back();
     bool remove(int value);
+<<<<<<< HEAD
+>>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1
+=======
 >>>>>>> parent of 9241575... Merge pull request #2 from inkink/branch1
 };
 
