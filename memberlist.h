@@ -15,8 +15,10 @@ struct Member{
     int total_spent;
     int rebate;
 
-    Member(std::string n = "default_name", int i = 0, int t = -1, int m = 0, int d = 0, int y = 0, int spent = 0, int rb = 0):
-        name(n), id(i), type(t), exp_month(m), exp_day(d), exp_year(y), total_spent(spent), rebate(rb) {}
+    Member(std::string n = "default_name", int i = 0, int t = -1, int m = 0,
+           int d = 0, int y = 0, int spent = 0, int rb = 0):
+           name(n), id(i), type(t), exp_month(m), exp_day(d), exp_year(y),
+           total_spent(spent), rebate(rb) {}
 };
 
 class MemberList {
@@ -29,7 +31,8 @@ public:
     Member getMember(int n) const;
     int length() const;
 
-
+    void addMember(std::string name, int id, int type, int exp_month, int exp_day, int exp_year);
+    void deleteMember();
 
 private:
     LinkedList<Member> list;

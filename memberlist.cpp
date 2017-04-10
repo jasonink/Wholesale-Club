@@ -64,3 +64,9 @@ int MemberList::length() const
 {
     return list.length();
 }
+
+void MemberList::addMember(std::string name, int id, int type, int exp_month, int exp_day, int exp_year)
+{
+    Member newMember(name,id,type,exp_month,exp_day,exp_year);
+    list.push_back(newMember);
+}
