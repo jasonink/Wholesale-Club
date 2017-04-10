@@ -95,10 +95,10 @@ void MainWindow::addMember()
         msgBox.setText("ID is not 6 digits");
         msgBox.exec();
     }
-    else if()
-    {
+//    else if()
+//    {
 
-    }
+//    }
     else
         list.addMember(name,id,type,exp_month,exp_day,exp_year);
 

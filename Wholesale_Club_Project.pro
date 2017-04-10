@@ -21,7 +21,6 @@ HEADERS  += mainwindow.h \
     memberlist.h
 
 FORMS    += mainwindow.ui \
-    addmemberwindow.ui
 
 DISTFILES += \
     warehouse_shoppers.txt
