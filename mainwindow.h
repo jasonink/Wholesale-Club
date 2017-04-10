@@ -19,6 +19,7 @@ public:
 
 public slots:
     void listMembers();
+    void listItems();
     void tableClear();
     void addMember();
     void deleteMember();
@@ -26,7 +27,7 @@ public slots:
 private:
     Ui::MainWindow *ui;
     MemberList member_list;
-    ItemList item_lists;
+    LinkedList<ItemList> item_lists;
 };
 
 #endif // MAINWINDOW_H

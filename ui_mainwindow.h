@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -65,6 +66,10 @@ public:
     QPlainTextEdit *itemNameInput;
     QPushButton *ItemPriceButton;
     QPushButton *itemSoldButton;
+    QGroupBox *displayItemBox;
+    QPushButton *displayItemsButton;
+    QLabel *label_4;
+    QComboBox *displayItemCombo;
     QWidget *reportTab;
     QGroupBox *groupBox;
     QPushButton *rebateButton;
@@ -101,7 +106,7 @@ public:
         pushButton_2->setGeometry(QRect(922, 540, 61, 21));
         tableWidget = new QTableWidget(centralWidget);
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
-        tableWidget->setGeometry(QRect(380, 70, 601, 461));
+        tableWidget->setGeometry(QRect(380, 70, 601, 421));
         clear = new QPushButton(centralWidget);
         clear->setObjectName(QStringLiteral("clear"));
         clear->setGeometry(QRect(660, 540, 75, 23));
@@ -203,7 +208,7 @@ public:
         itemTab->setObjectName(QStringLiteral("itemTab"));
         itemGBox = new QGroupBox(itemTab);
         itemGBox->setObjectName(QStringLiteral("itemGBox"));
-        itemGBox->setGeometry(QRect(10, 10, 341, 91));
+        itemGBox->setGeometry(QRect(10, 70, 341, 91));
         label = new QLabel(itemGBox);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(20, 40, 46, 13));
@@ -218,6 +223,18 @@ public:
         itemSoldButton = new QPushButton(itemGBox);
         itemSoldButton->setObjectName(QStringLiteral("itemSoldButton"));
         itemSoldButton->setGeometry(QRect(220, 50, 100, 20));
+        displayItemBox = new QGroupBox(itemTab);
+        displayItemBox->setObjectName(QStringLiteral("displayItemBox"));
+        displayItemBox->setGeometry(QRect(10, 10, 331, 61));
+        displayItemsButton = new QPushButton(displayItemBox);
+        displayItemsButton->setObjectName(QStringLiteral("displayItemsButton"));
+        displayItemsButton->setGeometry(QRect(190, 30, 141, 32));
+        label_4 = new QLabel(displayItemBox);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(10, 30, 60, 16));
+        displayItemCombo = new QComboBox(displayItemBox);
+        displayItemCombo->setObjectName(QStringLiteral("displayItemCombo"));
+        displayItemCombo->setGeometry(QRect(10, 30, 104, 26));
         tabWidget->addTab(itemTab, QString());
         reportTab = new QWidget();
         reportTab->setObjectName(QStringLiteral("reportTab"));
@@ -257,7 +274,7 @@ public:
         MainWindow->setStatusBar(statusBar);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 997, 21));
+        menuBar->setGeometry(QRect(0, 0, 997, 22));
         MainWindow->setMenuBar(menuBar);
 
         retranslateUi(MainWindow);
@@ -265,6 +282,7 @@ public:
         QObject::connect(pushButton_2, SIGNAL(clicked()), MainWindow, SLOT(close()));
         QObject::connect(clear, SIGNAL(clicked()), MainWindow, SLOT(tableClear()));
         QObject::connect(addMemberButton, SIGNAL(clicked()), MainWindow, SLOT(addMember()));
+        QObject::connect(displayItemsButton, SIGNAL(clicked()), MainWindow, SLOT(listItems()));
 
         tabWidget->setCurrentIndex(0);
 
@@ -305,6 +323,17 @@ public:
         label->setText(QApplication::translate("MainWindow", "Name:", 0));
         ItemPriceButton->setText(QApplication::translate("MainWindow", "Get Price", 0));
         itemSoldButton->setText(QApplication::translate("MainWindow", "Quantity Sold", 0));
+        displayItemBox->setTitle(QApplication::translate("MainWindow", "Display Items", 0));
+        displayItemsButton->setText(QApplication::translate("MainWindow", "Display Items", 0));
+        label_4->setText(QString());
+        displayItemCombo->clear();
+        displayItemCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Day 1", 0)
+         << QApplication::translate("MainWindow", "Day 2", 0)
+         << QApplication::translate("MainWindow", "Day 3", 0)
+         << QApplication::translate("MainWindow", "Day 4", 0)
+         << QApplication::translate("MainWindow", "Day 5", 0)
+        );
         tabWidget->setTabText(tabWidget->indexOf(itemTab), QApplication::translate("MainWindow", "Items", 0));
         groupBox->setTitle(QApplication::translate("MainWindow", "Print", 0));
         rebateButton->setText(QApplication::translate("MainWindow", "Print Rebate", 0));

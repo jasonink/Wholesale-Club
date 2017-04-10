@@ -5,6 +5,17 @@ ItemList::ItemList()
 
 }
 
+int ItemList::length() const
+{
+    return list.length();
+}
+
+Item ItemList::get_item(int n) const
+{
+    Item test = list.get_n(n);
+    return test;
+}
+
 //Returns true if success, false if no file was opened
 bool ItemList::init_from_file(std::string filename)
 {

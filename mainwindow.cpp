@@ -15,15 +15,15 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //Initialize the items list
     ItemList day;
-    day.init_from_file("/Users/Jason/Documents/School/QT/Wholesale-Club/day1.txt");
+    day.init_from_file("//Users/Jason/Desktop/untitled folder 2/day1.txt");
     item_lists.push_back(day);
-    day.init_from_file("/Users/Jason/Documents/School/QT/Wholesale-Club/day2.txt");
+    day.init_from_file("/Users/Jason/Desktop/untitled folder 2/day2.txt");
     item_lists.push_back(day);
-    day.init_from_file("/Users/Jason/Documents/School/QT/Wholesale-Club/day3.txt");
+    day.init_from_file("/Users/Jason/Desktop/untitled folder 2/day3.txt");
     item_lists.push_back(day);
-    day.init_from_file("/Users/Jason/Documents/School/QT/Wholesale-Club/day4.txt");
+    day.init_from_file("/Users/Jason/Desktop/untitled folder 2/day4.txt");
     item_lists.push_back(day);
-    day.init_from_file("/Users/Jason/Documents/School/QT/Wholesale-Club/day5.txt");
+    day.init_from_file("/Users/Jason/Desktop/untitled folder 2/day5.txt");
     item_lists.push_back(day);
 }
 
@@ -80,6 +80,39 @@ void MainWindow::listMembers()
         ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
     }
+}
+
+void MainWindow::listItems()
+{
+    ui->tableWidget->reset();
+
+    ui->tableWidget->setColumnCount(4);
+    ui->tableWidget->setColumnWidth(0,150);
+    ui->tableWidget->setColumnWidth(1,75);
+    ui->tableWidget->setColumnWidth(5,75);
+    ui->tableWidget->setRowCount(member_list.length());
+
+    std::string labels = "Item Name,Price,Quantity,Member ID";
+
+    ui->tableWidget->setHorizontalHeaderLabels(QString::fromStdString(labels).split(","));
+
+    int day = ui->displayItemCombo->currentIndex();
+
+    ItemList day_list = item_lists.get_n(day);
+    int length = day_list.length();
+    ui->tableWidget->setRowCount(length);
+    for (int i = 0; i < day_list.length(); i++){
+        Item current_item = day_list.get_item(i);
+
+        ui->tableWidget->setItem(i,0,new QTableWidgetItem( QString::fromStdString(current_item.name)));
+        ui->tableWidget->setItem(i,1,new QTableWidgetItem( QString::number(current_item.price)));
+        ui->tableWidget->setItem(i,2,new QTableWidgetItem( QString::number(current_item.quantity)));
+        ui->tableWidget->setItem(i,3,new QTableWidgetItem( QString::number(current_item.member_id)));
+    }
+
+        //Sets table cells to be uneditable in GUI
+        ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
 }
 
 void MainWindow::addMember()
