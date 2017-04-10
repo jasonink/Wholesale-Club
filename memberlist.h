@@ -27,6 +27,7 @@ public:
     void init_from_file(std::string filename);
     Member getMember(int n) const;
     int length() const;
+    void addMember(std::string name, int id, int type, int exp_month, int exp_day, int exp_year);
 
 
 
