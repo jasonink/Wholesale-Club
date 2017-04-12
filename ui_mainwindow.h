@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.5.1
+** Created by: Qt User Interface Compiler version 5.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -16,6 +16,7 @@
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPlainTextEdit>
@@ -43,22 +44,22 @@ public:
     QGroupBox *memberGroupBox;
     QPushButton *addMemberButton;
     QLabel *AddNamelabel;
-    QPlainTextEdit *AddNameBox;
     QLabel *AddMemberNum;
-    QPlainTextEdit *AddMemberNumBox;
     QLabel *Namelabel_3;
     QLabel *Namelabel_4;
-    QPlainTextEdit *addMemberExpBox;
     QRadioButton *memberTypeBasicRadio;
     QRadioButton *memberTypePreferredRadio;
+    QLineEdit *AddNameBox;
+    QLineEdit *AddMemberNumBox;
+    QLineEdit *addMemberExpBox;
     QPushButton *pushButton;
     QGroupBox *groupBox_2;
     QPushButton *deleteMemberButton;
-    QPlainTextEdit *RemoveMemberNumBox;
     QLabel *RemoveNamelabel;
-    QPlainTextEdit *RemoveNameBox;
     QLabel *RemoveMemberNum;
     QLabel *orLabel;
+    QLineEdit *RemoveNameBox;
+    QLineEdit *RemoveMemberNumBox;
     QWidget *itemTab;
     QGroupBox *itemGBox;
     QLabel *label;
@@ -127,23 +128,10 @@ public:
         QFont font1;
         font1.setPointSize(10);
         AddNamelabel->setFont(font1);
-        AddNameBox = new QPlainTextEdit(memberGroupBox);
-        AddNameBox->setObjectName(QStringLiteral("AddNameBox"));
-        AddNameBox->setGeometry(QRect(220, 20, 104, 21));
-        AddNameBox->setFrameShape(QFrame::Box);
-        AddNameBox->setFrameShadow(QFrame::Sunken);
-        AddNameBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        AddNameBox->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         AddMemberNum = new QLabel(memberGroupBox);
         AddMemberNum->setObjectName(QStringLiteral("AddMemberNum"));
         AddMemberNum->setGeometry(QRect(20, 58, 131, 21));
         AddMemberNum->setFont(font1);
-        AddMemberNumBox = new QPlainTextEdit(memberGroupBox);
-        AddMemberNumBox->setObjectName(QStringLiteral("AddMemberNumBox"));
-        AddMemberNumBox->setGeometry(QRect(220, 60, 104, 21));
-        AddMemberNumBox->setMaximumSize(QSize(104, 21));
-        AddMemberNumBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        AddMemberNumBox->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         Namelabel_3 = new QLabel(memberGroupBox);
         Namelabel_3->setObjectName(QStringLiteral("Namelabel_3"));
         Namelabel_3->setGeometry(QRect(20, 150, 111, 21));
@@ -152,42 +140,34 @@ public:
         Namelabel_4->setObjectName(QStringLiteral("Namelabel_4"));
         Namelabel_4->setGeometry(QRect(20, 98, 171, 21));
         Namelabel_4->setFont(font1);
-        addMemberExpBox = new QPlainTextEdit(memberGroupBox);
-        addMemberExpBox->setObjectName(QStringLiteral("addMemberExpBox"));
-        addMemberExpBox->setGeometry(QRect(220, 100, 104, 21));
-        addMemberExpBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        addMemberExpBox->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         memberTypeBasicRadio = new QRadioButton(memberGroupBox);
         memberTypeBasicRadio->setObjectName(QStringLiteral("memberTypeBasicRadio"));
         memberTypeBasicRadio->setGeometry(QRect(220, 140, 82, 17));
         memberTypePreferredRadio = new QRadioButton(memberGroupBox);
         memberTypePreferredRadio->setObjectName(QStringLiteral("memberTypePreferredRadio"));
         memberTypePreferredRadio->setGeometry(QRect(220, 160, 82, 17));
+        AddNameBox = new QLineEdit(memberGroupBox);
+        AddNameBox->setObjectName(QStringLiteral("AddNameBox"));
+        AddNameBox->setGeometry(QRect(220, 20, 113, 21));
+        AddMemberNumBox = new QLineEdit(memberGroupBox);
+        AddMemberNumBox->setObjectName(QStringLiteral("AddMemberNumBox"));
+        AddMemberNumBox->setGeometry(QRect(220, 60, 113, 21));
+        addMemberExpBox = new QLineEdit(memberGroupBox);
+        addMemberExpBox->setObjectName(QStringLiteral("addMemberExpBox"));
+        addMemberExpBox->setGeometry(QRect(220, 100, 113, 21));
         pushButton = new QPushButton(memberTab);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(100, 460, 161, 21));
+        pushButton->setGeometry(QRect(100, 450, 161, 21));
         groupBox_2 = new QGroupBox(memberTab);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        groupBox_2->setGeometry(QRect(10, 240, 341, 181));
+        groupBox_2->setGeometry(QRect(10, 240, 341, 171));
         deleteMemberButton = new QPushButton(groupBox_2);
         deleteMemberButton->setObjectName(QStringLiteral("deleteMemberButton"));
-        deleteMemberButton->setGeometry(QRect(120, 150, 100, 20));
-        RemoveMemberNumBox = new QPlainTextEdit(groupBox_2);
-        RemoveMemberNumBox->setObjectName(QStringLiteral("RemoveMemberNumBox"));
-        RemoveMemberNumBox->setGeometry(QRect(220, 100, 104, 21));
-        RemoveMemberNumBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        RemoveMemberNumBox->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+        deleteMemberButton->setGeometry(QRect(120, 140, 100, 20));
         RemoveNamelabel = new QLabel(groupBox_2);
         RemoveNamelabel->setObjectName(QStringLiteral("RemoveNamelabel"));
         RemoveNamelabel->setGeometry(QRect(20, 32, 41, 21));
         RemoveNamelabel->setFont(font1);
-        RemoveNameBox = new QPlainTextEdit(groupBox_2);
-        RemoveNameBox->setObjectName(QStringLiteral("RemoveNameBox"));
-        RemoveNameBox->setGeometry(QRect(220, 32, 104, 21));
-        RemoveNameBox->setFrameShape(QFrame::Box);
-        RemoveNameBox->setFrameShadow(QFrame::Sunken);
-        RemoveNameBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        RemoveNameBox->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         RemoveMemberNum = new QLabel(groupBox_2);
         RemoveMemberNum->setObjectName(QStringLiteral("RemoveMemberNum"));
         RemoveMemberNum->setGeometry(QRect(20, 98, 131, 21));
@@ -195,6 +175,12 @@ public:
         orLabel = new QLabel(groupBox_2);
         orLabel->setObjectName(QStringLiteral("orLabel"));
         orLabel->setGeometry(QRect(20, 65, 16, 21));
+        RemoveNameBox = new QLineEdit(groupBox_2);
+        RemoveNameBox->setObjectName(QStringLiteral("RemoveNameBox"));
+        RemoveNameBox->setGeometry(QRect(220, 40, 113, 21));
+        RemoveMemberNumBox = new QLineEdit(groupBox_2);
+        RemoveMemberNumBox->setObjectName(QStringLiteral("RemoveMemberNumBox"));
+        RemoveMemberNumBox->setGeometry(QRect(220, 100, 113, 21));
         tabWidget->addTab(memberTab, QString());
         groupBox_2->raise();
         memberGroupBox->raise();
@@ -257,7 +243,7 @@ public:
         MainWindow->setStatusBar(statusBar);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 997, 25));
+        menuBar->setGeometry(QRect(0, 0, 997, 22));
         MainWindow->setMenuBar(menuBar);
 
         retranslateUi(MainWindow);
@@ -283,24 +269,22 @@ public:
         memberGroupBox->setTitle(QApplication::translate("MainWindow", "Add Members", 0));
         addMemberButton->setText(QApplication::translate("MainWindow", "Add Member", 0));
         AddNamelabel->setText(QApplication::translate("MainWindow", "Name:", 0));
-        AddNameBox->setPlainText(QString());
-        AddNameBox->setPlaceholderText(QApplication::translate("MainWindow", "First Last", 0));
         AddMemberNum->setText(QApplication::translate("MainWindow", "Membership Number:", 0));
-        AddMemberNumBox->setPlaceholderText(QApplication::translate("MainWindow", "#####", 0));
         Namelabel_3->setText(QApplication::translate("MainWindow", "Membership Type:", 0));
         Namelabel_4->setText(QApplication::translate("MainWindow", "Membership Expiration Date:", 0));
-        addMemberExpBox->setPlaceholderText(QApplication::translate("MainWindow", "MM/DD/YYYY", 0));
         memberTypeBasicRadio->setText(QApplication::translate("MainWindow", "Basic", 0));
         memberTypePreferredRadio->setText(QApplication::translate("MainWindow", "Preferred", 0));
+        AddNameBox->setPlaceholderText(QApplication::translate("MainWindow", "First Last", 0));
+        AddMemberNumBox->setPlaceholderText(QApplication::translate("MainWindow", "#####", 0));
+        addMemberExpBox->setPlaceholderText(QApplication::translate("MainWindow", "mm/dd/yyyy", 0));
         pushButton->setText(QApplication::translate("MainWindow", "Display Members", 0));
         groupBox_2->setTitle(QApplication::translate("MainWindow", "Delete Members", 0));
         deleteMemberButton->setText(QApplication::translate("MainWindow", "Delete Member", 0));
-        RemoveMemberNumBox->setPlaceholderText(QApplication::translate("MainWindow", "#####", 0));
         RemoveNamelabel->setText(QApplication::translate("MainWindow", "Name:", 0));
-        RemoveNameBox->setPlainText(QString());
-        RemoveNameBox->setPlaceholderText(QApplication::translate("MainWindow", "First Last", 0));
         RemoveMemberNum->setText(QApplication::translate("MainWindow", "Membership Number:", 0));
         orLabel->setText(QApplication::translate("MainWindow", "Or", 0));
+        RemoveNameBox->setPlaceholderText(QApplication::translate("MainWindow", "First Last", 0));
+        RemoveMemberNumBox->setPlaceholderText(QApplication::translate("MainWindow", "#####", 0));
         tabWidget->setTabText(tabWidget->indexOf(memberTab), QApplication::translate("MainWindow", "Members", 0));
         itemGBox->setTitle(QApplication::translate("MainWindow", "Item Information", 0));
         label->setText(QApplication::translate("MainWindow", "Name:", 0));

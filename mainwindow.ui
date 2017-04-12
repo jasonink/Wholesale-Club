@@ -158,34 +158,6 @@
         <string>Name:</string>
        </property>
       </widget>
-      <widget class="QPlainTextEdit" name="AddNameBox">
-       <property name="geometry">
-        <rect>
-         <x>220</x>
-         <y>20</y>
-         <width>104</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Box</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Sunken</enum>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarAsNeeded</enum>
-       </property>
-       <property name="plainText">
-        <string/>
-       </property>
-       <property name="placeholderText">
-        <string>First Last</string>
-       </property>
-      </widget>
       <widget class="QLabel" name="AddMemberNum">
        <property name="geometry">
         <rect>
@@ -202,31 +174,6 @@
        </property>
        <property name="text">
         <string>Membership Number:</string>
-       </property>
-      </widget>
-      <widget class="QPlainTextEdit" name="AddMemberNumBox">
-       <property name="geometry">
-        <rect>
-         <x>220</x>
-         <y>60</y>
-         <width>104</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>104</width>
-         <height>21</height>
-        </size>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarAsNeeded</enum>
-       </property>
-       <property name="placeholderText">
-        <string>#####</string>
        </property>
       </widget>
       <widget class="QLabel" name="Namelabel_3">
@@ -265,25 +212,6 @@
         <string>Membership Expiration Date:</string>
        </property>
       </widget>
-      <widget class="QPlainTextEdit" name="addMemberExpBox">
-       <property name="geometry">
-        <rect>
-         <x>220</x>
-         <y>100</y>
-         <width>104</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarAsNeeded</enum>
-       </property>
-       <property name="placeholderText">
-        <string>MM/DD/YYYY</string>
-       </property>
-      </widget>
       <widget class="QRadioButton" name="memberTypeBasicRadio">
        <property name="geometry">
         <rect>
@@ -310,12 +238,51 @@
         <string>Preferred</string>
        </property>
       </widget>
+      <widget class="QLineEdit" name="AddNameBox">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>20</y>
+         <width>113</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>First Last</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="AddMemberNumBox">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>60</y>
+         <width>113</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>#####</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="addMemberExpBox">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>100</y>
+         <width>113</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>mm/dd/yyyy</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QPushButton" name="pushButton">
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>460</y>
+        <y>450</y>
         <width>161</width>
         <height>21</height>
        </rect>
@@ -330,7 +297,7 @@
         <x>10</x>
         <y>240</y>
         <width>341</width>
-        <height>181</height>
+        <height>171</height>
        </rect>
       </property>
       <property name="title">
@@ -340,32 +307,13 @@
        <property name="geometry">
         <rect>
          <x>120</x>
-         <y>150</y>
+         <y>140</y>
          <width>100</width>
          <height>20</height>
         </rect>
        </property>
        <property name="text">
         <string>Delete Member</string>
-       </property>
-      </widget>
-      <widget class="QPlainTextEdit" name="RemoveMemberNumBox">
-       <property name="geometry">
-        <rect>
-         <x>220</x>
-         <y>100</y>
-         <width>104</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarAsNeeded</enum>
-       </property>
-       <property name="placeholderText">
-        <string>#####</string>
        </property>
       </widget>
       <widget class="QLabel" name="RemoveNamelabel">
@@ -384,34 +332,6 @@
        </property>
        <property name="text">
         <string>Name:</string>
-       </property>
-      </widget>
-      <widget class="QPlainTextEdit" name="RemoveNameBox">
-       <property name="geometry">
-        <rect>
-         <x>220</x>
-         <y>32</y>
-         <width>104</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Box</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Sunken</enum>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarAsNeeded</enum>
-       </property>
-       <property name="plainText">
-        <string/>
-       </property>
-       <property name="placeholderText">
-        <string>First Last</string>
        </property>
       </widget>
       <widget class="QLabel" name="RemoveMemberNum">
@@ -443,6 +363,32 @@
        </property>
        <property name="text">
         <string>Or</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="RemoveNameBox">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>40</y>
+         <width>113</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>First Last</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="RemoveMemberNumBox">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>100</y>
+         <width>113</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>#####</string>
        </property>
       </widget>
      </widget>
@@ -655,7 +601,7 @@
      <x>0</x>
      <y>0</y>
      <width>997</width>
-     <height>25</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
