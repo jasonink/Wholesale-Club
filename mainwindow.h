@@ -23,6 +23,7 @@ public slots:
     void tableClear();
     void addMember();
     void deleteMember();
+    void saveAll();
 
 private:
     Ui::MainWindow *ui;

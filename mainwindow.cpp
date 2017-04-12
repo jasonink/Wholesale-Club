@@ -12,7 +12,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //Initialize members list
     member_list.init_from_file("/Users/Jason/Desktop/items/shoppers.txt");
-
     //Initialize the items list
     ItemList day;
     day.init_from_file("/Users/Jason/Desktop/items/day1.txt");
@@ -25,6 +24,8 @@ MainWindow::MainWindow(QWidget *parent) :
     item_lists.push_back(day);
     day.init_from_file("/Users/Jason/Desktop/items/day5.txt");
     item_lists.push_back(day);
+
+
 }
 
 MainWindow::~MainWindow()
@@ -117,8 +118,8 @@ void MainWindow::listItems()
 
 void MainWindow::addMember()
 {
-    std::string name = ui->AddNameBox->toPlainText().toStdString();
-    int id = ui->AddMemberNumBox->toPlainText().toInt();
+    std::string name = ui->AddNameBox->text().toStdString();
+    int id = ui->AddMemberNumBox->text().toInt();
     int type = 0;
     if(ui->memberTypeBasicRadio->isChecked())
         type = 0;
@@ -128,9 +129,9 @@ void MainWindow::addMember()
         type = -1;
 
     //READ IT BY SPLIT
-    std::string exp_date = ui->addMemberExpBox->toPlainText().toStdString();
+    std::string exp_date = ui->addMemberExpBox->text().toStdString();
     std::string m = exp_date.substr(0, 2);
-    std::string d = exp_date.substr(3, 5); //skips reading in the junk char
+    std::string d = exp_date.substr(3, 2); //skips reading in the junk char
     std::string y = exp_date.substr(6); //goes until end starting from char 6
     int exp_month = std::stoi(m);
     int exp_day = std::stoi(d);
@@ -138,28 +139,57 @@ void MainWindow::addMember()
 
     QMessageBox msgBox;
     int idLength = std::to_string(id).length();
-    if(idLength != 6)
+    if(idLength != 5)
     {
-        msgBox.setText("ID is not 6 digits");
+        msgBox.setText("ID is not 5 digits! Please re-enter.");
         msgBox.exec();
     }
-//    else if()
-//    {
-
-//    }
+    if((m.length() > 2) || (exp_month > 12 || exp_month < 1))
+    {
+        msgBox.setText("Enter a proper number for month!");
+        msgBox.exec();
+    }
+    if((d.length() > 2) || (exp_day > 31 || exp_day < 1))
+    {
+        msgBox.setText("Enter a proper number for day!");
+        msgBox.exec();
+    }
+    if(y.length() != 4)
+    {
+        msgBox.setText("Enter a proper number for year!");
+        msgBox.exec();
+    }
     else
         member_list.addMember(name,id,type,exp_month,exp_day,exp_year);
 
-
-    //NEED TO SAVE FILE
-    //CHECK FOR ERRORS:
-    //ID NUMBER w characters or less than or greater than 6
-    //DATE -- follow format
-
     listMembers();
+
 }
 
 void MainWindow::deleteMember()
 {
+    int member_index = 0;
 
+    if(!ui->RemoveNameBox->text().isEmpty()){
+        member_index = member_list.findMember(ui->RemoveNameBox->text().toStdString());
+        if (member_index != -1){
+            member_list.deleteMember(member_index);
+        }
+    }
+
+    else if(!ui->RemoveMemberNumBox->text().isEmpty()){
+        member_index = member_list.findMember(ui->RemoveMemberNumBox->text().toInt());
+            if (member_index != -1){
+                member_list.deleteMember(member_index);
+            }
+    }
+
+    listMembers();
 }
+
+void MainWindow::saveAll()
+{
+    member_list.write_members_to_file("/Users/Jason/Desktop/items/shoppers2.txt");
+}
+
+//NEED TO SAVE FILE

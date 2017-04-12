@@ -33,7 +33,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = Wholesale_Club_Project1.0.0
-DISTDIR = /Users/Jason/Desktop/Wholesale/Wholesale-Club-master/.tmp/Wholesale_Club_Project1.0.0
+DISTDIR = /Users/Jason/Desktop/Wholesale/Wholesale-Club-4-10-17/.tmp/Wholesale_Club_Project1.0.0
 LINK          = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
 LFLAGS        = -headerpad_max_install_names -stdlib=libc++ -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk -mmacosx-version-min=10.9 -Wl,-rpath,/Users/Jason/Qt/5.7/clang_64/lib
 LIBS          = $(SUBLIBS) -F/Users/Jason/Qt/5.7/clang_64/lib -framework QtWidgets -framework QtGui -framework QtCore -framework DiskArbitration -framework IOKit -framework OpenGL -framework AGL 
@@ -632,7 +632,7 @@ moc_mainwindow.cpp: ../../../Qt/5.7/clang_64/lib/QtWidgets.framework/Headers/QMa
 		itemlist.h \
 		mainwindow.h \
 		../../../Qt/5.7/clang_64/bin/moc
-	/Users/Jason/Qt/5.7/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/Jason/Qt/5.7/clang_64/mkspecs/macx-clang -I/Users/Jason/Desktop/Wholesale/Wholesale-Club-master -I/Users/Jason/Qt/5.7/clang_64/lib/QtWidgets.framework/Headers -I/Users/Jason/Qt/5.7/clang_64/lib/QtGui.framework/Headers -I/Users/Jason/Qt/5.7/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/usr/local/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/usr/include -I'/System/Library/Frameworks (framework directory)' -I'/Library/Frameworks (framework directory)' -F/Users/Jason/Qt/5.7/clang_64/lib mainwindow.h -o moc_mainwindow.cpp
+	/Users/Jason/Qt/5.7/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/Jason/Qt/5.7/clang_64/mkspecs/macx-clang -I/Users/Jason/Desktop/Wholesale/Wholesale-Club-4-10-17 -I/Users/Jason/Qt/5.7/clang_64/lib/QtWidgets.framework/Headers -I/Users/Jason/Qt/5.7/clang_64/lib/QtGui.framework/Headers -I/Users/Jason/Qt/5.7/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/usr/local/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.1.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/usr/include -I'/System/Library/Frameworks (framework directory)' -I'/Library/Frameworks (framework directory)' -F/Users/Jason/Qt/5.7/clang_64/lib mainwindow.h -o moc_mainwindow.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
