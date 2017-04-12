@@ -114,7 +114,7 @@
       <x>10</x>
       <y>10</y>
       <width>361</width>
-      <height>521</height>
+      <height>431</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -297,12 +297,12 @@
        </rect>
       </property>
       <property name="title">
-       <string>Delete Member</string>
+       <string>View/Modify/Delete</string>
       </property>
       <widget class="QPushButton" name="deleteMemberButton">
        <property name="geometry">
         <rect>
-         <x>120</x>
+         <x>230</x>
          <y>100</y>
          <width>100</width>
          <height>20</height>
@@ -338,7 +338,7 @@
         <string>#####</string>
        </property>
       </widget>
-      <widget class="QRadioButton" name="radioButton">
+      <widget class="QRadioButton" name="nameRadio">
        <property name="geometry">
         <rect>
          <x>50</x>
@@ -351,7 +351,7 @@
         <string>Name:</string>
        </property>
       </widget>
-      <widget class="QRadioButton" name="radioButton_2">
+      <widget class="QRadioButton" name="idRadio">
        <property name="geometry">
         <rect>
          <x>50</x>
@@ -364,81 +364,45 @@
         <string>Member ID:</string>
        </property>
       </widget>
-     </widget>
-     <widget class="QGroupBox" name="groupBox_3">
-      <property name="geometry">
-       <rect>
-        <x>9</x>
-        <y>379</y>
-        <width>341</width>
-        <height>111</height>
-       </rect>
-      </property>
-      <property name="title">
-       <string>Display Members</string>
-      </property>
-      <widget class="QRadioButton" name="radioButton_3">
+      <widget class="QPushButton" name="deleteMemberButton_2">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>30</y>
+         <x>10</x>
+         <y>100</y>
          <width>100</width>
          <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>All</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="radioButton_4">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>50</y>
-         <width>100</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Basic</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="radioButton_5">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>70</y>
-         <width>100</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Preferred</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>30</y>
-         <width>181</width>
-         <height>71</height>
         </rect>
        </property>
        <property name="font">
         <font>
          <family>Shree Devanagari 714</family>
-         <pointsize>17</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Display Members</string>
+        <string>View Info</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="deleteMemberButton_3">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>100</y>
+         <width>100</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Shree Devanagari 714</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Modify</string>
        </property>
       </widget>
      </widget>
      <zorder>groupBox_2</zorder>
      <zorder>memberGroupBox</zorder>
-     <zorder>groupBox_3</zorder>
     </widget>
     <widget class="QWidget" name="itemTab">
      <attribute name="title">
@@ -713,6 +677,77 @@
      <string>Save</string>
     </property>
    </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>450</y>
+      <width>121</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Display Options</string>
+    </property>
+    <widget class="QRadioButton" name="displayAllRadio">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>100</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>All</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="displayBasicRadio">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>100</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Basic</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="displayPreferredRadio">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>100</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Preferred</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>460</y>
+      <width>181</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Shree Devanagari 714</family>
+      <pointsize>17</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Display Members</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -742,9 +777,9 @@
   <tabstop>memberTypeBasicRadio</tabstop>
   <tabstop>memberTypePreferredRadio</tabstop>
   <tabstop>addMemberButton</tabstop>
-  <tabstop>radioButton</tabstop>
+  <tabstop>nameRadio</tabstop>
   <tabstop>RemoveNameBox</tabstop>
-  <tabstop>radioButton_2</tabstop>
+  <tabstop>idRadio</tabstop>
   <tabstop>RemoveMemberNumBox</tabstop>
   <tabstop>deleteMemberButton</tabstop>
   <tabstop>pushButton</tabstop>

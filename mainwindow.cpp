@@ -33,6 +33,24 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::appendMemberToTable(int i)
+{
+    ui->tableWidget->setRowCount(ui->tableWidget->rowCount()+1);
+    int n = ui->tableWidget->rowCount()-1;
+
+    ui->tableWidget->setItem(n,0,new QTableWidgetItem( QString::fromStdString(member_list.getMember(i).name)));
+    ui->tableWidget->setItem(n,1,new QTableWidgetItem( QString::number(member_list.getMember(i).id)));
+
+    std::string type = member_list.getMember(i).getTypeString();
+    ui->tableWidget->setItem(n,2,new QTableWidgetItem( QString::fromStdString(type)));
+
+    std::string date = member_list.getMember(i).exp_date.getString();
+    ui->tableWidget->setItem(n,3,new QTableWidgetItem( QString::fromStdString(date)));
+
+    ui->tableWidget->setItem(n,4,new QTableWidgetItem( QString::number(member_list.getMember(i).total_spent)));
+    ui->tableWidget->setItem(n,5,new QTableWidgetItem( QString::number(member_list.getMember(i).rebate)));
+}
+
 void MainWindow::tableClear()
 {
     ui->tableWidget->clear();
@@ -43,44 +61,33 @@ void MainWindow::tableClear()
 
 void MainWindow::listMembers()
 {
-    ui->tableWidget->reset();
+    tableClear();
 
     ui->tableWidget->setColumnCount(6);
     ui->tableWidget->setColumnWidth(0,150);
     ui->tableWidget->setColumnWidth(1,75);
     ui->tableWidget->setColumnWidth(5,75);
-    ui->tableWidget->setRowCount(member_list.length());
 
     std::string labels = "Name,ID,Type,Expiration Date,Total Spent,Rebate";
 
     ui->tableWidget->setHorizontalHeaderLabels(QString::fromStdString(labels).split(","));
-
-    for (int i = 0; i < member_list.length(); i++){
-        ui->tableWidget->setItem(i,0,new QTableWidgetItem( QString::fromStdString(member_list.getMember(i).name)));
-        ui->tableWidget->setItem(i,1,new QTableWidgetItem( QString::number(member_list.getMember(i).id)));
-        std::string type;
-        int type_int = member_list.getMember(i).type;
-        if (type_int == 0)
-            type = "Basic";
-        else if (type_int == 1)
-            type = "Preferred";
-        else
-            type = "Unknown";
-        ui->tableWidget->setItem(i,2,new QTableWidgetItem( QString::fromStdString(type)));
-
-        int month,day,year;
-        month = member_list.getMember(i).exp_date.getMonth();
-        day = member_list.getMember(i).exp_date.getDay();
-        year = member_list.getMember(i).exp_date.getYear();
-        std::string date = std::to_string(month) + "/" + std::to_string(day) + "/" + std::to_string(year);
-        ui->tableWidget->setItem(i,3,new QTableWidgetItem( QString::fromStdString(date)));
-        ui->tableWidget->setItem(i,4,new QTableWidgetItem( QString::number(member_list.getMember(i).total_spent)));
-        ui->tableWidget->setItem(i,5,new QTableWidgetItem( QString::number(member_list.getMember(i).rebate)));
-
-        //Sets table cells to be uneditable in GUI
-        ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
-
+    int i = 0;
+    while (i < member_list.length()){
+        if(ui->displayBasicRadio->isChecked()){
+            if (member_list.getMember(i).type == 0)
+                appendMemberToTable(i);
+        }
+        else if (ui->displayPreferredRadio->isChecked()){
+            if (member_list.getMember(i).type == 1)
+                appendMemberToTable(i);
+        }
+        else{
+            appendMemberToTable(i);
+        }
+        i++;
     }
+    //Sets table cells to be uneditable in GUI
+    ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
 }
 
 void MainWindow::listItems()
@@ -170,14 +177,14 @@ void MainWindow::deleteMember()
 {
     int member_index = 0;
 
-    if(!ui->RemoveNameBox->text().isEmpty()){
+    if(ui->nameRadio->isChecked()){
         member_index = member_list.findMember(ui->RemoveNameBox->text().toStdString());
         if (member_index != -1){
             member_list.deleteMember(member_index);
         }
     }
 
-    else if(!ui->RemoveMemberNumBox->text().isEmpty()){
+    else if(ui->idRadio->isChecked()){
         member_index = member_list.findMember(ui->RemoveMemberNumBox->text().toInt());
             if (member_index != -1){
                 member_list.deleteMember(member_index);
@@ -192,4 +199,3 @@ void MainWindow::saveAll()
     member_list.write_members_to_file("/Users/Jason/Desktop/items/shoppers2.txt");
 }
 
-//NEED TO SAVE FILE

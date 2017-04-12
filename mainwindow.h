@@ -17,6 +17,9 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+private:
+    void appendMemberToTable(int i);
+
 public slots:
     void listMembers();
     void listItems();
