@@ -16,6 +16,16 @@ Item ItemList::get_item(int n) const
     return test;
 }
 
+int ItemList::getQuantitySold() const
+{
+
+}
+
+float ItemList::getPrice() const
+{
+
+}
+
 //Returns true if success, false if no file was opened
 bool ItemList::init_from_file(std::string filename)
 {

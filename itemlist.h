@@ -23,6 +23,8 @@ public:
     ItemList();
     int length() const;
     Item get_item(int n) const;
+    int getQuantitySold() const;
+    float getPrice() const;
 
     bool init_from_file(std::string filename);
 

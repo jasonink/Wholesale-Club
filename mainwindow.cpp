@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
+#include <cctype>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -11,20 +12,37 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     //Initialize members list
-    member_list.init_from_file("/Users/Jason/Documents/School/QT/Wholesale-Club/shoppers.txt");
+    member_list.init_from_file("C:/Users/Bonnie/Desktop/text/shoppers.txt");
 
     //Initialize the items list
     ItemList day;
-    day.init_from_file("//Users/Jason/Desktop/untitled folder 2/day1.txt");
+    day.init_from_file("C:/Users/Bonnie/Desktop/text/day1.txt");
     item_lists.push_back(day);
-    day.init_from_file("/Users/Jason/Desktop/untitled folder 2/day2.txt");
+    day.init_from_file("C:/Users/Bonnie/Desktop/text/day2.txt");
     item_lists.push_back(day);
-    day.init_from_file("/Users/Jason/Desktop/untitled folder 2/day3.txt");
+    day.init_from_file("C:/Users/Bonnie/Desktop/text/day3.txt");
     item_lists.push_back(day);
-    day.init_from_file("/Users/Jason/Desktop/untitled folder 2/day4.txt");
+    day.init_from_file("C:/Users/Bonnie/Desktop/text/day4.txt");
     item_lists.push_back(day);
-    day.init_from_file("/Users/Jason/Desktop/untitled folder 2/day5.txt");
+    day.init_from_file("C:/Users/Bonnie/Desktop/text/day5.txt");
     item_lists.push_back(day);
+
+//    //Initialize members list
+//    member_list.init_from_file("/Users/Jason/Desktop/items/shoppers.txt");
+//    //Initialize the items list
+//    ItemList day;
+//    day.init_from_file("/Users/Jason/Desktop/items/day1.txt");
+//    item_lists.push_back(day);
+//    day.init_from_file("/Users/Jason/Desktop/items/day2.txt");
+//    item_lists.push_back(day);
+//    day.init_from_file("/Users/Jason/Desktop/items/day3.txt");
+//    item_lists.push_back(day);
+//    day.init_from_file("/Users/Jason/Desktop/items/day4.txt");
+//    item_lists.push_back(day);
+//    day.init_from_file("/Users/Jason/Desktop/items/day5.txt");
+//    item_lists.push_back(day);
+
+
 }
 
 MainWindow::~MainWindow()
@@ -117,8 +135,8 @@ void MainWindow::listItems()
 
 void MainWindow::addMember()
 {
-    std::string name = ui->AddNameBox->toPlainText().toStdString();
-    int id = ui->AddMemberNumBox->toPlainText().toInt();
+    std::string name = ui->AddNameBox->text().toStdString();
+    int id = ui->AddMemberNumBox->text().toInt();
     int type = 0;
     if(ui->memberTypeBasicRadio->isChecked())
         type = 0;
@@ -128,9 +146,9 @@ void MainWindow::addMember()
         type = -1;
 
     //READ IT BY SPLIT
-    std::string exp_date = ui->addMemberExpBox->toPlainText().toStdString();
+    std::string exp_date = ui->addMemberExpBox->text().toStdString();
     std::string m = exp_date.substr(0, 2);
-    std::string d = exp_date.substr(3, 5); //skips reading in the junk char
+    std::string d = exp_date.substr(3, 2); //skips reading in the junk char
     std::string y = exp_date.substr(6); //goes until end starting from char 6
     int exp_month = std::stoi(m);
     int exp_day = std::stoi(d);
@@ -138,28 +156,96 @@ void MainWindow::addMember()
 
     QMessageBox msgBox;
     int idLength = std::to_string(id).length();
-    if(idLength != 6)
+    bool flag = false;
+    if(!flag)
     {
-        msgBox.setText("ID is not 6 digits");
-        msgBox.exec();
+        if(idLength != 5)
+        {
+            msgBox.setText("ID is not 5 digits! Please re-enter.");
+            msgBox.exec();
+        }
+        if((m.length() > 2) || (exp_month > 12 || exp_month < 1))
+        {
+            msgBox.setText("Enter a proper number for month!");
+            msgBox.exec();
+        }
+        if((d.length() > 2) || (exp_day > 31 || exp_day < 1))
+        {
+            msgBox.setText("Enter a proper number for day!");
+            msgBox.exec();
+        }
+        if(y.length() != 4)
+        {
+            msgBox.setText("Enter a proper number for year!");
+            msgBox.exec();
+        }
     }
-//    else if()
-//    {
-
-//    }
     else
         member_list.addMember(name,id,type,exp_month,exp_day,exp_year);
 
-
-    //NEED TO SAVE FILE
-    //CHECK FOR ERRORS:
-    //ID NUMBER w characters or less than or greater than 6
-    //DATE -- follow format
-
     listMembers();
+
+}
+
+void MainWindow::getItemInfo()
+{
+    std::string itemName = ui->itemNameBox->text().toStdString();
+    float itemPrice;
+    int itemQuantity = 0;
+
+    for(int i = 0; i < item_lists.length(); i++)
+    {
+        for(int j = 0; j < item_lists.get_n(i).length(); j++)
+            if(itemName == item_lists.get_n(i).get_item(j).name)
+            {
+                itemPrice = item_lists.get_n(i).get_item(j).price;
+                itemQuantity += item_lists.get_n(i).get_item(j).quantity;
+            }
+    }
+
+    ui->tableWidget->setColumnCount(3);
+    ui->tableWidget->setRowCount(1);
+    ui->tableWidget->setItem(0,0,new QTableWidgetItem( QString::fromStdString(itemName)));
+    ui->tableWidget->setItem(0,1,new QTableWidgetItem( QString::number(itemPrice)));
+    ui->tableWidget->setItem(0,2,new QTableWidgetItem( QString::number(itemQuantity)));
+
 }
 
 void MainWindow::deleteMember()
 {
+    int member_index = 0;
 
+    if(!ui->RemoveNameBox->text().isEmpty()){
+        member_index = member_list.findMember(ui->RemoveNameBox->text().toStdString());
+        if (member_index != -1){
+            member_list.deleteMember(member_index);
+        }
+    }
+
+    else if(!ui->RemoveMemberNumBox->text().isEmpty()){
+        member_index = member_list.findMember(ui->RemoveMemberNumBox->text().toInt());
+            if (member_index != -1){
+                member_list.deleteMember(member_index);
+            }
+    }
+
+    QMessageBox msgBox;
+
+    if(member_list.findMember(ui->RemoveNameBox->text().toStdString()) == -1)
+    {
+        msgBox.setText("Member not found!");
+        msgBox.exec();
+    }
+    if(member_list.findMember(ui->RemoveMemberNumBox->text().toInt()) == -1)
+    {
+        msgBox.setText("ID not found!");
+        msgBox.exec();
+    }
+
+    listMembers();
+}
+
+void MainWindow::saveAll()
+{
+    member_list.write_members_to_file("/Users/Jason/Desktop/items/shoppers2.txt");
 }
