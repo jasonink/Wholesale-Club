@@ -21,6 +21,8 @@ class ItemList
 {
 public:
     ItemList();
+    int length() const;
+    Item get_item(int n) const;
 
     bool init_from_file(std::string filename);
 

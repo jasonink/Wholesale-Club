@@ -39,7 +39,6 @@ class LinkedList
         void select_sort();
         void insert_sorted(const E& value);
         void remove_duplicates();
-        void remove(int n);
 
 
         //Operators----------------------------------------------
@@ -407,40 +406,6 @@ void LinkedList<E>::remove_duplicates()
 
     }
 }
-
-template <typename E>
-void LinkedList<E>::remove(int n)
-{
-    Node<E>* temp;
-    Node<E>* temp2;
-    temp = head;
-
-    if(n == 0)
-    {
-        head = temp->next;
-        delete temp;
-        return;
-    }
-    else if (n == length()-1){
-        for (int i = 0 ; i < n-1; i++){
-            temp = temp->next;
-        }
-        delete tail;
-        tail = temp;
-        return;
-    }
-    else
-    {
-        for (int i = 0 ; i < n-1; i++){
-        temp = temp->next;
-        }
-        temp2 = temp->next;
-
-        temp->next = temp2->next;
-        delete temp2;
-    }
-}
-
 
 template <typename E>
 E LinkedList<E>::get_n(int i) const

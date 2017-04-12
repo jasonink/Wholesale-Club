@@ -19,6 +19,7 @@ public:
 
 public slots:
     void listMembers();
+    void listItems();
     void tableClear();
     void addMember();
     void deleteMember();

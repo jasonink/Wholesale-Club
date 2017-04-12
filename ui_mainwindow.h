@@ -13,10 +13,10 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPlainTextEdit>
@@ -44,28 +44,32 @@ public:
     QGroupBox *memberGroupBox;
     QPushButton *addMemberButton;
     QLabel *AddNamelabel;
+    QPlainTextEdit *AddNameBox;
     QLabel *AddMemberNum;
+    QPlainTextEdit *AddMemberNumBox;
     QLabel *Namelabel_3;
     QLabel *Namelabel_4;
+    QPlainTextEdit *addMemberExpBox;
     QRadioButton *memberTypeBasicRadio;
     QRadioButton *memberTypePreferredRadio;
-    QLineEdit *AddNameBox;
-    QLineEdit *AddMemberNumBox;
-    QLineEdit *addMemberExpBox;
     QPushButton *pushButton;
     QGroupBox *groupBox_2;
     QPushButton *deleteMemberButton;
+    QPlainTextEdit *RemoveMemberNumBox;
     QLabel *RemoveNamelabel;
+    QPlainTextEdit *RemoveNameBox;
     QLabel *RemoveMemberNum;
     QLabel *orLabel;
-    QLineEdit *RemoveNameBox;
-    QLineEdit *RemoveMemberNumBox;
     QWidget *itemTab;
     QGroupBox *itemGBox;
     QLabel *label;
     QPlainTextEdit *itemNameInput;
     QPushButton *ItemPriceButton;
     QPushButton *itemSoldButton;
+    QGroupBox *displayItemBox;
+    QPushButton *displayItemsButton;
+    QLabel *label_4;
+    QComboBox *displayItemCombo;
     QWidget *reportTab;
     QGroupBox *groupBox;
     QPushButton *rebateButton;
@@ -88,7 +92,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         Title = new QLabel(centralWidget);
         Title->setObjectName(QStringLiteral("Title"));
-        Title->setGeometry(QRect(400, 10, 511, 51));
+        Title->setGeometry(QRect(500, 10, 351, 51));
         QFont font;
         font.setPointSize(22);
         font.setBold(true);
@@ -102,7 +106,7 @@ public:
         pushButton_2->setGeometry(QRect(922, 540, 61, 21));
         tableWidget = new QTableWidget(centralWidget);
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
-        tableWidget->setGeometry(QRect(380, 70, 601, 461));
+        tableWidget->setGeometry(QRect(380, 70, 601, 421));
         clear = new QPushButton(centralWidget);
         clear->setObjectName(QStringLiteral("clear"));
         clear->setGeometry(QRect(660, 540, 75, 23));
@@ -128,10 +132,23 @@ public:
         QFont font1;
         font1.setPointSize(10);
         AddNamelabel->setFont(font1);
+        AddNameBox = new QPlainTextEdit(memberGroupBox);
+        AddNameBox->setObjectName(QStringLiteral("AddNameBox"));
+        AddNameBox->setGeometry(QRect(220, 20, 104, 21));
+        AddNameBox->setFrameShape(QFrame::Box);
+        AddNameBox->setFrameShadow(QFrame::Sunken);
+        AddNameBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        AddNameBox->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         AddMemberNum = new QLabel(memberGroupBox);
         AddMemberNum->setObjectName(QStringLiteral("AddMemberNum"));
         AddMemberNum->setGeometry(QRect(20, 58, 131, 21));
         AddMemberNum->setFont(font1);
+        AddMemberNumBox = new QPlainTextEdit(memberGroupBox);
+        AddMemberNumBox->setObjectName(QStringLiteral("AddMemberNumBox"));
+        AddMemberNumBox->setGeometry(QRect(220, 60, 104, 21));
+        AddMemberNumBox->setMaximumSize(QSize(104, 21));
+        AddMemberNumBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        AddMemberNumBox->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         Namelabel_3 = new QLabel(memberGroupBox);
         Namelabel_3->setObjectName(QStringLiteral("Namelabel_3"));
         Namelabel_3->setGeometry(QRect(20, 150, 111, 21));
@@ -140,34 +157,42 @@ public:
         Namelabel_4->setObjectName(QStringLiteral("Namelabel_4"));
         Namelabel_4->setGeometry(QRect(20, 98, 171, 21));
         Namelabel_4->setFont(font1);
+        addMemberExpBox = new QPlainTextEdit(memberGroupBox);
+        addMemberExpBox->setObjectName(QStringLiteral("addMemberExpBox"));
+        addMemberExpBox->setGeometry(QRect(220, 100, 104, 21));
+        addMemberExpBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        addMemberExpBox->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         memberTypeBasicRadio = new QRadioButton(memberGroupBox);
         memberTypeBasicRadio->setObjectName(QStringLiteral("memberTypeBasicRadio"));
         memberTypeBasicRadio->setGeometry(QRect(220, 140, 82, 17));
         memberTypePreferredRadio = new QRadioButton(memberGroupBox);
         memberTypePreferredRadio->setObjectName(QStringLiteral("memberTypePreferredRadio"));
         memberTypePreferredRadio->setGeometry(QRect(220, 160, 82, 17));
-        AddNameBox = new QLineEdit(memberGroupBox);
-        AddNameBox->setObjectName(QStringLiteral("AddNameBox"));
-        AddNameBox->setGeometry(QRect(220, 20, 113, 21));
-        AddMemberNumBox = new QLineEdit(memberGroupBox);
-        AddMemberNumBox->setObjectName(QStringLiteral("AddMemberNumBox"));
-        AddMemberNumBox->setGeometry(QRect(220, 60, 113, 21));
-        addMemberExpBox = new QLineEdit(memberGroupBox);
-        addMemberExpBox->setObjectName(QStringLiteral("addMemberExpBox"));
-        addMemberExpBox->setGeometry(QRect(220, 100, 113, 21));
         pushButton = new QPushButton(memberTab);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(100, 450, 161, 21));
+        pushButton->setGeometry(QRect(100, 460, 161, 21));
         groupBox_2 = new QGroupBox(memberTab);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        groupBox_2->setGeometry(QRect(10, 240, 341, 171));
+        groupBox_2->setGeometry(QRect(10, 240, 341, 181));
         deleteMemberButton = new QPushButton(groupBox_2);
         deleteMemberButton->setObjectName(QStringLiteral("deleteMemberButton"));
-        deleteMemberButton->setGeometry(QRect(120, 140, 100, 20));
+        deleteMemberButton->setGeometry(QRect(120, 150, 100, 20));
+        RemoveMemberNumBox = new QPlainTextEdit(groupBox_2);
+        RemoveMemberNumBox->setObjectName(QStringLiteral("RemoveMemberNumBox"));
+        RemoveMemberNumBox->setGeometry(QRect(220, 100, 104, 21));
+        RemoveMemberNumBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        RemoveMemberNumBox->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         RemoveNamelabel = new QLabel(groupBox_2);
         RemoveNamelabel->setObjectName(QStringLiteral("RemoveNamelabel"));
         RemoveNamelabel->setGeometry(QRect(20, 32, 41, 21));
         RemoveNamelabel->setFont(font1);
+        RemoveNameBox = new QPlainTextEdit(groupBox_2);
+        RemoveNameBox->setObjectName(QStringLiteral("RemoveNameBox"));
+        RemoveNameBox->setGeometry(QRect(220, 32, 104, 21));
+        RemoveNameBox->setFrameShape(QFrame::Box);
+        RemoveNameBox->setFrameShadow(QFrame::Sunken);
+        RemoveNameBox->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        RemoveNameBox->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         RemoveMemberNum = new QLabel(groupBox_2);
         RemoveMemberNum->setObjectName(QStringLiteral("RemoveMemberNum"));
         RemoveMemberNum->setGeometry(QRect(20, 98, 131, 21));
@@ -175,12 +200,6 @@ public:
         orLabel = new QLabel(groupBox_2);
         orLabel->setObjectName(QStringLiteral("orLabel"));
         orLabel->setGeometry(QRect(20, 65, 16, 21));
-        RemoveNameBox = new QLineEdit(groupBox_2);
-        RemoveNameBox->setObjectName(QStringLiteral("RemoveNameBox"));
-        RemoveNameBox->setGeometry(QRect(220, 40, 113, 21));
-        RemoveMemberNumBox = new QLineEdit(groupBox_2);
-        RemoveMemberNumBox->setObjectName(QStringLiteral("RemoveMemberNumBox"));
-        RemoveMemberNumBox->setGeometry(QRect(220, 100, 113, 21));
         tabWidget->addTab(memberTab, QString());
         groupBox_2->raise();
         memberGroupBox->raise();
@@ -189,7 +208,7 @@ public:
         itemTab->setObjectName(QStringLiteral("itemTab"));
         itemGBox = new QGroupBox(itemTab);
         itemGBox->setObjectName(QStringLiteral("itemGBox"));
-        itemGBox->setGeometry(QRect(10, 10, 341, 91));
+        itemGBox->setGeometry(QRect(10, 70, 341, 91));
         label = new QLabel(itemGBox);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(20, 40, 46, 13));
@@ -204,6 +223,18 @@ public:
         itemSoldButton = new QPushButton(itemGBox);
         itemSoldButton->setObjectName(QStringLiteral("itemSoldButton"));
         itemSoldButton->setGeometry(QRect(220, 50, 100, 20));
+        displayItemBox = new QGroupBox(itemTab);
+        displayItemBox->setObjectName(QStringLiteral("displayItemBox"));
+        displayItemBox->setGeometry(QRect(10, 10, 331, 61));
+        displayItemsButton = new QPushButton(displayItemBox);
+        displayItemsButton->setObjectName(QStringLiteral("displayItemsButton"));
+        displayItemsButton->setGeometry(QRect(190, 30, 141, 32));
+        label_4 = new QLabel(displayItemBox);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(10, 30, 60, 16));
+        displayItemCombo = new QComboBox(displayItemBox);
+        displayItemCombo->setObjectName(QStringLiteral("displayItemCombo"));
+        displayItemCombo->setGeometry(QRect(10, 30, 104, 26));
         tabWidget->addTab(itemTab, QString());
         reportTab = new QWidget();
         reportTab->setObjectName(QStringLiteral("reportTab"));
@@ -251,7 +282,7 @@ public:
         QObject::connect(pushButton_2, SIGNAL(clicked()), MainWindow, SLOT(close()));
         QObject::connect(clear, SIGNAL(clicked()), MainWindow, SLOT(tableClear()));
         QObject::connect(addMemberButton, SIGNAL(clicked()), MainWindow, SLOT(addMember()));
-        QObject::connect(deleteMemberButton, SIGNAL(clicked()), MainWindow, SLOT(deleteMember()));
+        QObject::connect(displayItemsButton, SIGNAL(clicked()), MainWindow, SLOT(listItems()));
 
         tabWidget->setCurrentIndex(0);
 
@@ -269,27 +300,40 @@ public:
         memberGroupBox->setTitle(QApplication::translate("MainWindow", "Add Members", 0));
         addMemberButton->setText(QApplication::translate("MainWindow", "Add Member", 0));
         AddNamelabel->setText(QApplication::translate("MainWindow", "Name:", 0));
+        AddNameBox->setPlainText(QString());
+        AddNameBox->setPlaceholderText(QApplication::translate("MainWindow", "First Last", 0));
         AddMemberNum->setText(QApplication::translate("MainWindow", "Membership Number:", 0));
+        AddMemberNumBox->setPlaceholderText(QApplication::translate("MainWindow", "######", 0));
         Namelabel_3->setText(QApplication::translate("MainWindow", "Membership Type:", 0));
         Namelabel_4->setText(QApplication::translate("MainWindow", "Membership Expiration Date:", 0));
+        addMemberExpBox->setPlaceholderText(QApplication::translate("MainWindow", "MM/DD/YYYY", 0));
         memberTypeBasicRadio->setText(QApplication::translate("MainWindow", "Basic", 0));
         memberTypePreferredRadio->setText(QApplication::translate("MainWindow", "Preferred", 0));
-        AddNameBox->setPlaceholderText(QApplication::translate("MainWindow", "First Last", 0));
-        AddMemberNumBox->setPlaceholderText(QApplication::translate("MainWindow", "#####", 0));
-        addMemberExpBox->setPlaceholderText(QApplication::translate("MainWindow", "mm/dd/yyyy", 0));
         pushButton->setText(QApplication::translate("MainWindow", "Display Members", 0));
         groupBox_2->setTitle(QApplication::translate("MainWindow", "Delete Members", 0));
         deleteMemberButton->setText(QApplication::translate("MainWindow", "Delete Member", 0));
+        RemoveMemberNumBox->setPlaceholderText(QApplication::translate("MainWindow", "######", 0));
         RemoveNamelabel->setText(QApplication::translate("MainWindow", "Name:", 0));
+        RemoveNameBox->setPlainText(QString());
+        RemoveNameBox->setPlaceholderText(QApplication::translate("MainWindow", "First Last", 0));
         RemoveMemberNum->setText(QApplication::translate("MainWindow", "Membership Number:", 0));
         orLabel->setText(QApplication::translate("MainWindow", "Or", 0));
-        RemoveNameBox->setPlaceholderText(QApplication::translate("MainWindow", "First Last", 0));
-        RemoveMemberNumBox->setPlaceholderText(QApplication::translate("MainWindow", "#####", 0));
         tabWidget->setTabText(tabWidget->indexOf(memberTab), QApplication::translate("MainWindow", "Members", 0));
         itemGBox->setTitle(QApplication::translate("MainWindow", "Item Information", 0));
         label->setText(QApplication::translate("MainWindow", "Name:", 0));
         ItemPriceButton->setText(QApplication::translate("MainWindow", "Get Price", 0));
         itemSoldButton->setText(QApplication::translate("MainWindow", "Quantity Sold", 0));
+        displayItemBox->setTitle(QApplication::translate("MainWindow", "Display Items", 0));
+        displayItemsButton->setText(QApplication::translate("MainWindow", "Display Items", 0));
+        label_4->setText(QString());
+        displayItemCombo->clear();
+        displayItemCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Day 1", 0)
+         << QApplication::translate("MainWindow", "Day 2", 0)
+         << QApplication::translate("MainWindow", "Day 3", 0)
+         << QApplication::translate("MainWindow", "Day 4", 0)
+         << QApplication::translate("MainWindow", "Day 5", 0)
+        );
         tabWidget->setTabText(tabWidget->indexOf(itemTab), QApplication::translate("MainWindow", "Items", 0));
         groupBox->setTitle(QApplication::translate("MainWindow", "Print", 0));
         rebateButton->setText(QApplication::translate("MainWindow", "Print Rebate", 0));

@@ -25,14 +25,9 @@ public:
     ~MemberList();
 
     void init_from_file(std::string filename);
-    void overwriteFile(std::string filename);
     Member getMember(int n) const;
-    int getID(int n) const;
     int length() const;
     void addMember(std::string name, int id, int type, int exp_month, int exp_day, int exp_year);
-    int findMember(std::string name) const;
-    int findMember(int id) const;
-    void deleteMember(int n);
 
 
 
