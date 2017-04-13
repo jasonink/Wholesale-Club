@@ -9,9 +9,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>997</width>
+    <width>1024</width>
     <height>619</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Shree Devanagari 714</family>
+    <weight>50</weight>
+    <italic>false</italic>
+    <bold>false</bold>
+    <strikeout>false</strikeout>
+   </font>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -20,14 +29,15 @@
    <widget class="QLabel" name="Title">
     <property name="geometry">
      <rect>
-      <x>500</x>
+      <x>440</x>
       <y>10</y>
-      <width>351</width>
+      <width>511</width>
       <height>51</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Shree Devanagari 714</family>
       <pointsize>22</pointsize>
       <weight>75</weight>
       <italic>true</italic>
@@ -62,19 +72,22 @@
      <rect>
       <x>380</x>
       <y>70</y>
-      <width>601</width>
-      <height>421</height>
+      <width>631</width>
+      <height>461</height>
      </rect>
     </property>
    </widget>
    <widget class="QPushButton" name="clear">
     <property name="geometry">
      <rect>
-      <x>660</x>
-      <y>540</y>
+      <x>640</x>
+      <y>530</y>
       <width>75</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>Clear the table</string>
     </property>
     <property name="text">
      <string>Clear</string>
@@ -105,11 +118,11 @@
       <x>10</x>
       <y>10</y>
       <width>361</width>
-      <height>521</height>
+      <height>431</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="memberTab">
      <attribute name="title">
@@ -121,20 +134,23 @@
         <x>10</x>
         <y>10</y>
         <width>341</width>
-        <height>221</height>
+        <height>231</height>
        </rect>
       </property>
       <property name="title">
-       <string>Add Members</string>
+       <string>Add Member</string>
       </property>
       <widget class="QPushButton" name="addMemberButton">
        <property name="geometry">
         <rect>
          <x>120</x>
-         <y>190</y>
-         <width>101</width>
-         <height>21</height>
+         <y>200</y>
+         <width>100</width>
+         <height>20</height>
         </rect>
+       </property>
+       <property name="toolTip">
+        <string>Add this member to the list</string>
        </property>
        <property name="text">
         <string>Add Member</string>
@@ -144,103 +160,50 @@
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>20</y>
+         <y>30</y>
          <width>41</width>
          <height>21</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>10</pointsize>
+         <pointsize>13</pointsize>
         </font>
        </property>
        <property name="text">
         <string>Name:</string>
        </property>
       </widget>
-      <widget class="QPlainTextEdit" name="AddNameBox">
-       <property name="geometry">
-        <rect>
-         <x>220</x>
-         <y>20</y>
-         <width>104</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Box</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Sunken</enum>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarAsNeeded</enum>
-       </property>
-       <property name="plainText">
-        <string/>
-       </property>
-       <property name="placeholderText">
-        <string>First Last</string>
-       </property>
-      </widget>
       <widget class="QLabel" name="AddMemberNum">
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>58</y>
+         <y>68</y>
          <width>131</width>
          <height>21</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>10</pointsize>
+         <pointsize>13</pointsize>
         </font>
        </property>
        <property name="text">
         <string>Membership Number:</string>
        </property>
       </widget>
-      <widget class="QPlainTextEdit" name="AddMemberNumBox">
-       <property name="geometry">
-        <rect>
-         <x>220</x>
-         <y>60</y>
-         <width>104</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>104</width>
-         <height>21</height>
-        </size>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarAsNeeded</enum>
-       </property>
-       <property name="placeholderText">
-        <string>######</string>
-       </property>
-      </widget>
       <widget class="QLabel" name="Namelabel_3">
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>150</y>
+         <y>160</y>
          <width>111</width>
          <height>21</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>10</pointsize>
+         <pointsize>13</pointsize>
         </font>
        </property>
        <property name="text">
@@ -251,44 +214,25 @@
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>98</y>
+         <y>108</y>
          <width>171</width>
          <height>21</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>10</pointsize>
+         <pointsize>13</pointsize>
         </font>
        </property>
        <property name="text">
         <string>Membership Expiration Date:</string>
        </property>
       </widget>
-      <widget class="QPlainTextEdit" name="addMemberExpBox">
-       <property name="geometry">
-        <rect>
-         <x>220</x>
-         <y>100</y>
-         <width>104</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarAsNeeded</enum>
-       </property>
-       <property name="placeholderText">
-        <string>MM/DD/YYYY</string>
-       </property>
-      </widget>
       <widget class="QRadioButton" name="memberTypeBasicRadio">
        <property name="geometry">
         <rect>
          <x>220</x>
-         <y>140</y>
+         <y>150</y>
          <width>82</width>
          <height>17</height>
         </rect>
@@ -296,12 +240,15 @@
        <property name="text">
         <string>Basic</string>
        </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
       </widget>
       <widget class="QRadioButton" name="memberTypePreferredRadio">
        <property name="geometry">
         <rect>
          <x>220</x>
-         <y>160</y>
+         <y>170</y>
          <width>82</width>
          <height>17</height>
         </rect>
@@ -310,145 +257,170 @@
         <string>Preferred</string>
        </property>
       </widget>
-     </widget>
-     <widget class="QPushButton" name="pushButton">
-      <property name="geometry">
-       <rect>
-        <x>100</x>
-        <y>460</y>
-        <width>161</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Display Members</string>
-      </property>
-     </widget>
-     <widget class="QGroupBox" name="groupBox_2">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>240</y>
-        <width>341</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="title">
-       <string>Delete Members</string>
-      </property>
-      <widget class="QPushButton" name="deleteMemberButton">
-       <property name="geometry">
-        <rect>
-         <x>120</x>
-         <y>150</y>
-         <width>100</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Delete Member</string>
-       </property>
-      </widget>
-      <widget class="QPlainTextEdit" name="RemoveMemberNumBox">
+      <widget class="QLineEdit" name="AddNameBox">
        <property name="geometry">
         <rect>
          <x>220</x>
-         <y>100</y>
-         <width>104</width>
+         <y>30</y>
+         <width>113</width>
          <height>21</height>
         </rect>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarAsNeeded</enum>
-       </property>
-       <property name="placeholderText">
-        <string>######</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="RemoveNamelabel">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>32</y>
-         <width>41</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Name:</string>
-       </property>
-      </widget>
-      <widget class="QPlainTextEdit" name="RemoveNameBox">
-       <property name="geometry">
-        <rect>
-         <x>220</x>
-         <y>32</y>
-         <width>104</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Box</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Sunken</enum>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarAsNeeded</enum>
-       </property>
-       <property name="plainText">
-        <string/>
        </property>
        <property name="placeholderText">
         <string>First Last</string>
        </property>
       </widget>
-      <widget class="QLabel" name="RemoveMemberNum">
+      <widget class="QLineEdit" name="AddMemberNumBox">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>98</y>
-         <width>131</width>
+         <x>220</x>
+         <y>70</y>
+         <width>113</width>
          <height>21</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>#####</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="addMemberExpBox">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>110</y>
+         <width>113</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>mm/dd/yyyy</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>250</y>
+        <width>341</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>View/Modify/Delete</string>
+      </property>
+      <widget class="QPushButton" name="deleteMemberButton">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>100</y>
+         <width>100</width>
+         <height>20</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>10</pointsize>
+         <family>Shree Devanagari 714</family>
         </font>
        </property>
        <property name="text">
-        <string>Membership Number:</string>
+        <string>Delete Member</string>
        </property>
       </widget>
-      <widget class="QLabel" name="orLabel">
+      <widget class="QLineEdit" name="RemoveNameBox">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>65</y>
-         <width>16</width>
+         <x>170</x>
+         <y>30</y>
+         <width>131</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>First Last</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="RemoveMemberNumBox">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>60</y>
+         <width>131</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>#####</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="deleteMemberNameRadio">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>30</y>
+         <width>100</width>
          <height>21</height>
         </rect>
        </property>
        <property name="text">
-        <string>Or</string>
+        <string>Name:</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="deleteMemberIDRadio">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>60</y>
+         <width>100</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Member ID:</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="deleteMemberButton_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>100</y>
+         <width>100</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Shree Devanagari 714</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>View Info</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="deleteMemberButton_3">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>100</y>
+         <width>100</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Shree Devanagari 714</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Modify</string>
        </property>
       </widget>
      </widget>
      <zorder>groupBox_2</zorder>
      <zorder>memberGroupBox</zorder>
-     <zorder>pushButton</zorder>
     </widget>
     <widget class="QWidget" name="itemTab">
      <attribute name="title">
@@ -458,10 +430,13 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>70</y>
+        <y>80</y>
         <width>341</width>
-        <height>91</height>
+        <height>71</height>
        </rect>
+      </property>
+      <property name="toolTip">
+       <string>View an item's info</string>
       </property>
       <property name="title">
        <string>Item Information</string>
@@ -477,50 +452,34 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>10</pointsize>
+         <pointsize>13</pointsize>
         </font>
        </property>
        <property name="text">
         <string>Name:</string>
        </property>
       </widget>
-      <widget class="QPlainTextEdit" name="itemNameInput">
-       <property name="geometry">
-        <rect>
-         <x>65</x>
-         <y>38</y>
-         <width>121</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-      </widget>
       <widget class="QPushButton" name="ItemPriceButton">
        <property name="geometry">
         <rect>
          <x>220</x>
-         <y>20</y>
+         <y>30</y>
          <width>100</width>
          <height>20</height>
         </rect>
        </property>
        <property name="text">
-        <string>Get Price</string>
+        <string>Get Info</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="itemSoldButton">
+      <widget class="QLineEdit" name="itemNameBox">
        <property name="geometry">
         <rect>
-         <x>220</x>
-         <y>50</y>
-         <width>100</width>
-         <height>20</height>
+         <x>70</x>
+         <y>30</y>
+         <width>113</width>
+         <height>21</height>
         </rect>
-       </property>
-       <property name="text">
-        <string>Quantity Sold</string>
        </property>
       </widget>
      </widget>
@@ -533,8 +492,11 @@
         <height>61</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string>View the items for a specified day</string>
+      </property>
       <property name="title">
-       <string>Display Items</string>
+       <string>Display Sales by Day</string>
       </property>
       <widget class="QPushButton" name="displayItemsButton">
        <property name="geometry">
@@ -571,31 +533,6 @@
          <height>26</height>
         </rect>
        </property>
-       <item>
-        <property name="text">
-         <string>Day 1</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Day 2</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Day 3</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Day 4</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Day 5</string>
-        </property>
-       </item>
       </widget>
      </widget>
     </widget>
@@ -609,7 +546,7 @@
         <x>10</x>
         <y>10</y>
         <width>341</width>
-        <height>91</height>
+        <height>121</height>
        </rect>
       </property>
       <property name="title">
@@ -619,7 +556,7 @@
        <property name="geometry">
         <rect>
          <x>211</x>
-         <y>10</y>
+         <y>30</y>
          <width>121</width>
          <height>20</height>
         </rect>
@@ -632,7 +569,7 @@
        <property name="geometry">
         <rect>
          <x>210</x>
-         <y>38</y>
+         <y>58</y>
          <width>121</width>
          <height>20</height>
         </rect>
@@ -645,7 +582,7 @@
        <property name="geometry">
         <rect>
          <x>210</x>
-         <y>63</y>
+         <y>83</y>
          <width>121</width>
          <height>20</height>
         </rect>
@@ -658,7 +595,7 @@
        <property name="geometry">
         <rect>
          <x>70</x>
-         <y>20</y>
+         <y>30</y>
          <width>101</width>
          <height>21</height>
         </rect>
@@ -676,15 +613,15 @@
       <widget class="QLabel" name="dateLabel">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>21</y>
+         <x>10</x>
+         <y>30</y>
          <width>46</width>
          <height>15</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>10</pointsize>
+         <pointsize>13</pointsize>
         </font>
        </property>
        <property name="text">
@@ -713,6 +650,124 @@
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="saveAllButton">
+    <property name="geometry">
+     <rect>
+      <x>830</x>
+      <y>540</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Save all changes</string>
+    </property>
+    <property name="text">
+     <string>Save</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>450</y>
+      <width>121</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Select which member type you would like to view in reports</string>
+    </property>
+    <property name="title">
+     <string>Display Options</string>
+    </property>
+    <widget class="QRadioButton" name="displayAllRadio">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>100</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>All</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="displayBasicRadio">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>100</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Basic</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="displayPreferredRadio">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>100</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Preferred</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>460</y>
+      <width>181</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Shree Devanagari 714</family>
+      <pointsize>17</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Display Members</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="TableTitle">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>50</y>
+      <width>231</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Shree Devanagari 714</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Table Title</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -728,13 +783,39 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>997</width>
+     <width>1024</width>
      <height>22</height>
     </rect>
    </property>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>AddNameBox</tabstop>
+  <tabstop>AddMemberNumBox</tabstop>
+  <tabstop>addMemberExpBox</tabstop>
+  <tabstop>memberTypeBasicRadio</tabstop>
+  <tabstop>memberTypePreferredRadio</tabstop>
+  <tabstop>addMemberButton</tabstop>
+  <tabstop>deleteMemberNameRadio</tabstop>
+  <tabstop>RemoveNameBox</tabstop>
+  <tabstop>deleteMemberIDRadio</tabstop>
+  <tabstop>RemoveMemberNumBox</tabstop>
+  <tabstop>deleteMemberButton</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>displayItemCombo</tabstop>
+  <tabstop>displayItemsButton</tabstop>
+  <tabstop>ItemPriceButton</tabstop>
+  <tabstop>viewReportButton</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>tableWidget</tabstop>
+  <tabstop>clear</tabstop>
+  <tabstop>totalPurchasesButton</tabstop>
+  <tabstop>rebateButton</tabstop>
+  <tabstop>saveAllButton</tabstop>
+  <tabstop>plainTextEdit</tabstop>
+  <tabstop>tabWidget</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
@@ -744,8 +825,8 @@
    <slot>listMembers()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>215</x>
-     <y>545</y>
+     <x>218</x>
+     <y>535</y>
     </hint>
     <hint type="destinationlabel">
      <x>701</x>
@@ -777,7 +858,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>675</x>
-     <y>581</y>
+     <y>587</y>
     </hint>
     <hint type="destinationlabel">
      <x>633</x>
@@ -792,12 +873,28 @@
    <slot>addMember()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>194</x>
-     <y>273</y>
+     <x>202</x>
+     <y>290</y>
     </hint>
     <hint type="destinationlabel">
      <x>376</x>
      <y>291</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>deleteMemberButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>deleteMember()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>253</x>
+     <y>430</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>355</x>
+     <y>586</y>
     </hint>
    </hints>
   </connection>
@@ -808,20 +905,122 @@
    <slot>listItems()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>190</x>
-     <y>534</y>
+     <x>290</x>
+     <y>116</y>
     </hint>
     <hint type="destinationlabel">
-     <x>75</x>
-     <y>581</y>
+     <x>349</x>
+     <y>42</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>saveAllButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>saveAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>876</x>
+     <y>590</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>799</x>
+     <y>592</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ItemPriceButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>getItemInfo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>293</x>
+     <y>193</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>68</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>displayAllRadio</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setDisplayType()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>68</x>
+     <y>521</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>11</x>
+     <y>535</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>displayBasicRadio</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setDisplayType()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>89</x>
+     <y>544</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>14</x>
+     <y>543</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>displayPreferredRadio</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setDisplayType()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>567</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>13</x>
+     <y>571</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>deleteMemberButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>viewMember()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>76</x>
+     <y>433</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>433</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
+  <signal>signal1()</signal>
   <slot>listMembers()</slot>
   <slot>tableClear()</slot>
   <slot>addMember()</slot>
+  <slot>deleteMember()</slot>
   <slot>listItems()</slot>
+  <slot>saveAll()</slot>
+  <slot>getItemInfo()</slot>
+  <slot>setDisplayType()</slot>
+  <slot>viewMember()</slot>
  </slots>
 </ui>
