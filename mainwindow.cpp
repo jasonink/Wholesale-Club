@@ -1,8 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "linkedlist.h"
+#include "memberlist.h"
 #include <QMessageBox>
 
-std::string DIRECTORY = "/Users/Jason/Desktop/items/";
+std::string DIRECTORY = "/Users/Bonnie/Desktop/text/";
 //std::string DIRECTORY = "C:/Users/Bonnie/Desktop/text/";
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -34,7 +36,6 @@ MainWindow::MainWindow(QWidget *parent) :
     for (int i = 0; i < day_count; i++){
         ui->displayItemCombo->addItem(QString::fromStdString(item_lists.get_n(i).get_item(0).purchase_date.getString()));
     }
-
 
 }
 
@@ -137,6 +138,100 @@ void MainWindow::listMembers()
         ui->TableTitle->setText("List of Preferred Members");
     else
         ui->TableTitle->setText("List of All Members");
+}
+
+void MainWindow::update()
+{
+    if(remove_type == 0)
+    {
+        std::string newName = ui->tableWidget->item(0,0)->text().toStdString();
+        int newID = ui->tableWidget->item(0,1)->text().toInt();
+        int newType = ui->tableWidget->item(0,2)->text().toInt();
+        //Date newDate = ui->tableWidget->item(0,3)->text().tostring();
+
+        for(int i = 0; i < member_list.length(); i++)
+        {
+            if(newName == member_list.getName(i))
+            {
+                //member_list.getMember(i).name = newName;
+                //member_list.getMember(i).id = newID;
+                //member_list.getMember(i).type = newType;
+//                int p1 = member_list.getMember(i).id, p2 = newID;
+//                int *x = reinterpret_cast<int*>(p1), *x2 = reinterpret_cast<int*>(p2);
+//                *x = *x2;
+                int x = member_list.getMember(i).id;
+                int &y = x; //ref to x
+                int *p = &x; //address x
+                *p = newID;
+                Member newMember("notserp",newID,0,11,11,2011);
+                LinkedList list;
+                list.insertAt(newMember, i);
+            }
+        }
+    }
+}
+
+void MainWindow::modifyMember()
+{
+    tableClear();
+    ui->tableWidget->setColumnCount(4);
+    ui->tableWidget->setRowCount(1);
+
+    int count = 0;
+
+    if(ui->deleteMemberNameRadio->isChecked())
+        remove_type = 0;
+    else if(ui->deleteMemberIDRadio->isChecked())
+        remove_type = 1;
+
+    if(remove_type == 0)
+    {
+     std::string memberName = ui->RemoveNameBox->text().toStdString();
+
+     for(int i = 0; i < member_list.length(); i++)
+     {
+         count++;
+         if(memberName == member_list.getName(i))
+         {
+              ui->tableWidget->setItem(0,0,new QTableWidgetItem( QString::fromStdString(memberName)));
+              ui->tableWidget->setItem(0,1,new QTableWidgetItem( QString::number(member_list.getID(i))));
+              if(member_list.getMember(i).type == 0)
+                ui->tableWidget->setItem(0,2,new QTableWidgetItem( QString::fromStdString("Basic")));
+              else if(member_list.getMember(i).type == 1)
+                ui->tableWidget->setItem(0,2,new QTableWidgetItem( QString::fromStdString("Preferred")));
+              ui->tableWidget->setItem(0,3,new QTableWidgetItem( QString::fromStdString(member_list.getMember(i).exp_date.getString())));
+              remove_type = 3;
+         }
+         else
+             remove_type = -1;
+     }
+    }
+
+    if(remove_type == 1)
+    {
+     int memberID = ui->RemoveMemberNumBox->text().toInt();
+
+     for(int i = 0; i < member_list.length(); i++)
+     {
+         count++;
+         if(memberID == member_list.getID(i))
+         {
+              ui->tableWidget->setItem(0,0,new QTableWidgetItem( QString::fromStdString(member_list.getName(i))));
+              ui->tableWidget->setItem(0,1,new QTableWidgetItem( QString::number(memberID)));
+              if(member_list.getMember(i).type == 0)
+                ui->tableWidget->setItem(0,2,new QTableWidgetItem( QString::fromStdString("Basic")));
+              else if(member_list.getMember(i).type == 1)
+                ui->tableWidget->setItem(0,2,new QTableWidgetItem( QString::fromStdString("Preferred")));
+              ui->tableWidget->setItem(0,3,new QTableWidgetItem( QString::fromStdString(member_list.getMember(i).exp_date.getString())));
+              remove_type = 3;
+         }
+         else
+             remove_type = -1;
+     }
+    }
+//    if(remove_type == -1)
+//        displayMsgBox("Member not found!");
+    ui->tableWidget->setEditTriggers(QAbstractItemView::DoubleClicked);
 }
 
 void MainWindow::listItems()
@@ -586,13 +681,8 @@ void MainWindow::viewMember()
     ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
 }
 
-void MainWindow::modifyMember()
-{
-
-}
-
 void MainWindow::saveAll()
 {
-    member_list.write_members_to_file("/Users/Jason/Desktop/items/shoppers2.txt");
+    member_list.write_members_to_file("/Users/Bonnie/Desktop/text/shoppers2.txt");
 }
 

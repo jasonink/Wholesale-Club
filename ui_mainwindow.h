@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.0
+** Created by: Qt User Interface Compiler version 5.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -61,6 +61,7 @@ public:
     QRadioButton *deleteMemberIDRadio;
     QPushButton *deleteMemberButton_2;
     QPushButton *ModifyMemberButton;
+    QPushButton *UpdateButton;
     QWidget *itemTab;
     QGroupBox *itemGBox;
     QLabel *label;
@@ -105,7 +106,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->setEnabled(true);
-        MainWindow->resize(1024, 619);
+        MainWindow->resize(1024, 643);
         QFont font;
         font.setFamily(QStringLiteral("Shree Devanagari 714"));
         font.setBold(false);
@@ -129,13 +130,13 @@ public:
         Title->setAlignment(Qt::AlignCenter);
         pushButton_2 = new QPushButton(centralWidget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(922, 540, 61, 21));
+        pushButton_2->setGeometry(QRect(950, 530, 61, 21));
         tableWidget = new QTableWidget(centralWidget);
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
         tableWidget->setGeometry(QRect(380, 70, 631, 461));
         clear = new QPushButton(centralWidget);
         clear->setObjectName(QStringLiteral("clear"));
-        clear->setGeometry(QRect(640, 530, 75, 23));
+        clear->setGeometry(QRect(780, 530, 75, 23));
         label_2 = new QLabel(centralWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(880, 10, 91, 51));
@@ -143,7 +144,7 @@ public:
         label_2->setScaledContents(true);
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setGeometry(QRect(10, 10, 361, 431));
+        tabWidget->setGeometry(QRect(10, 10, 361, 451));
         memberTab = new QWidget();
         memberTab->setObjectName(QStringLiteral("memberTab"));
         memberGroupBox = new QGroupBox(memberTab);
@@ -188,7 +189,7 @@ public:
         addMemberExpBox->setGeometry(QRect(220, 110, 113, 21));
         groupBox_2 = new QGroupBox(memberTab);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        groupBox_2->setGeometry(QRect(10, 250, 341, 131));
+        groupBox_2->setGeometry(QRect(10, 250, 341, 161));
         deleteMemberButton = new QPushButton(groupBox_2);
         deleteMemberButton->setObjectName(QStringLiteral("deleteMemberButton"));
         deleteMemberButton->setGeometry(QRect(230, 100, 100, 20));
@@ -216,13 +217,9 @@ public:
         ModifyMemberButton->setObjectName(QStringLiteral("ModifyMemberButton"));
         ModifyMemberButton->setGeometry(QRect(120, 100, 100, 20));
         ModifyMemberButton->setFont(font3);
-        deleteMemberButton->raise();
-        RemoveNameBox->raise();
-        RemoveMemberNumBox->raise();
-        deleteMemberNameRadio->raise();
-        deleteMemberIDRadio->raise();
-        deleteMemberButton_2->raise();
-        ModifyMemberButton->raise();
+        UpdateButton = new QPushButton(groupBox_2);
+        UpdateButton->setObjectName(QStringLiteral("UpdateButton"));
+        UpdateButton->setGeometry(QRect(130, 129, 80, 25));
         tabWidget->addTab(memberTab, QString());
         groupBox_2->raise();
         memberGroupBox->raise();
@@ -320,10 +317,10 @@ public:
         label_3->setScaledContents(true);
         saveAllButton = new QPushButton(centralWidget);
         saveAllButton->setObjectName(QStringLiteral("saveAllButton"));
-        saveAllButton->setGeometry(QRect(830, 540, 81, 31));
+        saveAllButton->setGeometry(QRect(860, 530, 81, 31));
         DisplayOptionsGroupBox = new QGroupBox(centralWidget);
         DisplayOptionsGroupBox->setObjectName(QStringLiteral("DisplayOptionsGroupBox"));
-        DisplayOptionsGroupBox->setGeometry(QRect(20, 450, 121, 101));
+        DisplayOptionsGroupBox->setGeometry(QRect(20, 460, 121, 101));
         displayAllRadio = new QRadioButton(DisplayOptionsGroupBox);
         displayAllRadio->setObjectName(QStringLiteral("displayAllRadio"));
         displayAllRadio->setGeometry(QRect(20, 30, 100, 20));
@@ -336,7 +333,7 @@ public:
         displayPreferredRadio->setGeometry(QRect(20, 70, 100, 20));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(170, 460, 181, 91));
+        pushButton->setGeometry(QRect(170, 480, 181, 91));
         QFont font4;
         font4.setFamily(QStringLiteral("Shree Devanagari 714"));
         font4.setPointSize(17);
@@ -362,7 +359,7 @@ public:
         MainWindow->setStatusBar(statusBar);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1024, 22));
+        menuBar->setGeometry(QRect(0, 0, 1024, 25));
         MainWindow->setMenuBar(menuBar);
         QWidget::setTabOrder(AddNameBox, AddMemberNumBox);
         QWidget::setTabOrder(AddMemberNumBox, addMemberExpBox);
@@ -445,6 +442,7 @@ public:
         deleteMemberIDRadio->setText(QApplication::translate("MainWindow", "Member ID:", 0));
         deleteMemberButton_2->setText(QApplication::translate("MainWindow", "View Info", 0));
         ModifyMemberButton->setText(QApplication::translate("MainWindow", "Modify", 0));
+        UpdateButton->setText(QApplication::translate("MainWindow", "Update", 0));
         tabWidget->setTabText(tabWidget->indexOf(memberTab), QApplication::translate("MainWindow", "Members", 0));
 #ifndef QT_NO_TOOLTIP
         itemGBox->setToolTip(QApplication::translate("MainWindow", "View an item's info", 0));

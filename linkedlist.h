@@ -41,6 +41,7 @@ class LinkedList
         void remove_duplicates();
         void remove(int n);
         E& modify(int n);
+        void insertAt(int data, int pos);
 
 
         //Operators----------------------------------------------
@@ -585,6 +586,42 @@ LinkedList<E> & LinkedList<E>::operator=(const LinkedList<E> &source)
     }
 }
 
+//insert node at certain pos
+template <typename E>
+void LinkedList<E>::insertAt(int data, int pos)
+{
+    Node<E> *temp;
+    temp->next = NULL;
+    temp->data = data;
+    Node<E> *cur;
+    int i = 0;
+    if(pos == 0)
+    {
+        if(head == NULL)
+            head = temp;
+        else
+        {
+            temp->next = head;
+            head = temp;
+        }
+    }
+    else
+    {
+        Node<E> *temp2;
+        temp2 = head;
+        while(i !=(pos - 1))
+        {
+            temp2 = temp2->next;
+            i++;
+        }
+        cur = temp2->next;
+        temp2->next = temp;
+        temp->next = cur;
+        temp2 = NULL;
+        delete temp2;
+    }
+    return head;
+}
 
 
 #endif // LINKEDLIST_H

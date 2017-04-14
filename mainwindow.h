@@ -35,6 +35,7 @@ public slots:
     void saveAll();
     void getItemInfo();
     void setDisplayType();
+    void update();
 
     void displayDues();
     void displayExpirationDates();
@@ -49,6 +50,7 @@ private:
 
     //Type for functions to display (all: -1, basic: 0, preferred: 1)
     int display_type;
+    int remove_type = 0;
 };
 
 #endif // MAINWINDOW_H

@@ -49,6 +49,7 @@ public:
     int findMember(std::string name) const;
     int findMember(int id) const;
 
+
     //Mutators
     void addMember(std::string name, int id, int type, int exp_month, int exp_day, int exp_year);
     void deleteMember(int n);

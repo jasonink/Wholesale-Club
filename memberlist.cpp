@@ -132,9 +132,16 @@ int MemberList::getID(int n) const
     return test.id;
 }
 
-std::string MemberList::getName(int id) const
+std::string MemberList::getName(int n) const
 {
-
+    Member test = list.get_n(n);
+    return test.name;
 }
+
+//int setID(int id)
+//{
+//    return id;
+//}
+
 
 

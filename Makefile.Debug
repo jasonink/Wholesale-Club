@@ -94,7 +94,7 @@ $(DESTDIR_TARGET): ui_mainwindow.h $(OBJECTS)
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) $(OBJECTS)  $(LIBS)
 
 qmake: FORCE
-	@$(QMAKE) -spec win32-g++ "CONFIG+=debug" -o Makefile.Debug Wholesale_Club_Project.pro
+	@$(QMAKE) -spec win32-g++ -o Makefile.Debug Wholesale_Club_Project.pro
 
 qmake_all: FORCE
 
@@ -496,15 +496,8 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		E:/QtCreator/5.5/mingw492_32/include/QtGui/qinputmethod.h \
 		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/QButtonGroup \
 		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qbuttongroup.h \
-		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/QGroupBox \
-		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qgroupbox.h \
-		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qframe.h \
-		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/QHeaderView \
-		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qheaderview.h \
-		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qabstractitemview.h \
-		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qabstractscrollarea.h \
-		E:/QtCreator/5.5/mingw492_32/include/QtCore/qabstractitemmodel.h \
-		E:/QtCreator/5.5/mingw492_32/include/QtCore/qitemselectionmodel.h \
+		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/QComboBox \
+		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qcombobox.h \
 		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qabstractitemdelegate.h \
 		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qstyleoption.h \
 		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qabstractspinbox.h \
@@ -515,8 +508,23 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qstyle.h \
 		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qtabbar.h \
 		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qrubberband.h \
+		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qframe.h \
+		E:/QtCreator/5.5/mingw492_32/include/QtCore/qabstractitemmodel.h \
+		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/QGroupBox \
+		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qgroupbox.h \
+		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/QHeaderView \
+		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qheaderview.h \
+		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qabstractitemview.h \
+		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qabstractscrollarea.h \
+		E:/QtCreator/5.5/mingw492_32/include/QtCore/qitemselectionmodel.h \
 		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/QLabel \
 		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qlabel.h \
+		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/QLineEdit \
+		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qlineedit.h \
+		E:/QtCreator/5.5/mingw492_32/include/QtGui/qtextcursor.h \
+		E:/QtCreator/5.5/mingw492_32/include/QtGui/qtextformat.h \
+		E:/QtCreator/5.5/mingw492_32/include/QtGui/qpen.h \
+		E:/QtCreator/5.5/mingw492_32/include/QtGui/qtextoption.h \
 		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/QMenuBar \
 		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qmenubar.h \
 		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qmenu.h \
@@ -524,10 +532,6 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qplaintextedit.h \
 		E:/QtCreator/5.5/mingw492_32/include/QtWidgets/qtextedit.h \
 		E:/QtCreator/5.5/mingw492_32/include/QtGui/qtextdocument.h \
-		E:/QtCreator/5.5/mingw492_32/include/QtGui/qtextoption.h \
-		E:/QtCreator/5.5/mingw492_32/include/QtGui/qtextcursor.h \
-		E:/QtCreator/5.5/mingw492_32/include/QtGui/qtextformat.h \
-		E:/QtCreator/5.5/mingw492_32/include/QtGui/qpen.h \
 		E:/QtCreator/5.5/mingw492_32/include/QtGui/qabstracttextdocumentlayout.h \
 		E:/QtCreator/5.5/mingw492_32/include/QtGui/qtextlayout.h \
 		E:/QtCreator/5.5/mingw492_32/include/QtGui/qglyphrun.h \
