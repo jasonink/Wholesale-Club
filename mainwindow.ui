@@ -122,7 +122,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="memberTab">
      <attribute name="title">
@@ -400,7 +400,7 @@
         <string>View Info</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="deleteMemberButton_3">
+      <widget class="QPushButton" name="ModifyMemberButton">
        <property name="geometry">
         <rect>
          <x>120</x>
@@ -418,6 +418,15 @@
         <string>Modify</string>
        </property>
       </widget>
+      <zorder>deleteMemberButton</zorder>
+      <zorder>RemoveNameBox</zorder>
+      <zorder>RemoveMemberNumBox</zorder>
+      <zorder>deleteMemberNameRadio</zorder>
+      <zorder>deleteMemberIDRadio</zorder>
+      <zorder>deleteMemberButton_2</zorder>
+      <zorder>ModifyMemberButton</zorder>
+      <zorder>pushButton</zorder>
+      <zorder>DisplayOptionsGroupBox</zorder>
      </widget>
      <zorder>groupBox_2</zorder>
      <zorder>memberGroupBox</zorder>
@@ -546,7 +555,7 @@
         <x>10</x>
         <y>10</y>
         <width>341</width>
-        <height>121</height>
+        <height>151</height>
        </rect>
       </property>
       <property name="title">
@@ -628,6 +637,157 @@
         <string>Date:</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="viewDuesButton">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>110</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Dues Paid</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="DisplayExpDatesButton">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>180</y>
+        <width>121</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Expiration Dates</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="DisplayExpDatesBox">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>180</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="placeholderText">
+       <string>mm</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>180</y>
+        <width>60</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Month:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="DisplayChangeTypeButton">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>220</y>
+        <width>141</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Change Membership</string>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="ViewMemberPurchasesGroupBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>260</y>
+        <width>341</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Find Member's Purchases</string>
+      </property>
+      <widget class="QLineEdit" name="ViewMemberPurchaseNameBox">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>30</y>
+         <width>131</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>First Last</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="ViewMemberPurchaseIDBox">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>60</y>
+         <width>131</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>#####</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="ViewMemberPuchasesNameRadio">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>30</y>
+         <width>100</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Name:</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="ViewMemberPurchasesIDRadio">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>60</y>
+         <width>100</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Member ID:</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="ViewMemberPurchaseButton">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>100</y>
+         <width>111</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Shree Devanagari 714</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>View Purchases</string>
+       </property>
+      </widget>
      </widget>
     </widget>
    </widget>
@@ -666,7 +826,7 @@
      <string>Save</string>
     </property>
    </widget>
-   <widget class="QGroupBox" name="groupBox_3">
+   <widget class="QGroupBox" name="DisplayOptionsGroupBox">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -730,7 +890,7 @@
       <x>170</x>
       <y>460</y>
       <width>181</width>
-      <height>41</height>
+      <height>91</height>
      </rect>
     </property>
     <property name="font">
@@ -748,7 +908,7 @@
      <rect>
       <x>380</x>
       <y>50</y>
-      <width>231</width>
+      <width>401</width>
       <height>16</height>
      </rect>
     </property>
@@ -818,22 +978,6 @@
  </tabstops>
  <resources/>
  <connections>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>listMembers()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>218</x>
-     <y>535</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>701</x>
-     <y>99</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>pushButton_2</sender>
    <signal>clicked()</signal>
@@ -947,6 +1091,54 @@
    </hints>
   </connection>
   <connection>
+   <sender>deleteMemberButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>viewMember()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>76</x>
+     <y>433</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>433</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>displayPreferredRadio</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setDisplayType()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>115</x>
+     <y>567</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>13</x>
+     <y>571</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>listMembers()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>218</x>
+     <y>535</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>701</x>
+     <y>99</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
    <sender>displayAllRadio</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
@@ -979,34 +1171,82 @@
    </hints>
   </connection>
   <connection>
-   <sender>displayPreferredRadio</sender>
+   <sender>ModifyMemberButton</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>setDisplayType()</slot>
+   <slot>modifyMember()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>115</x>
-     <y>567</y>
+     <x>180</x>
+     <y>435</y>
     </hint>
     <hint type="destinationlabel">
-     <x>13</x>
-     <y>571</y>
+     <x>5</x>
+     <y>406</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>deleteMemberButton_2</sender>
+   <sender>viewDuesButton</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>viewMember()</slot>
+   <slot>displayDues()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>76</x>
-     <y>433</y>
+     <x>282</x>
+     <y>209</y>
     </hint>
     <hint type="destinationlabel">
-     <x>-1</x>
-     <y>433</y>
+     <x>379</x>
+     <y>57</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DisplayExpDatesButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>displayExpirationDates()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>270</x>
+     <y>262</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1</x>
+     <y>222</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DisplayChangeTypeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>displayChangeType()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>246</x>
+     <y>301</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1</x>
+     <y>316</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ViewMemberPurchaseButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>displayMemberPurchases()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>166</x>
+     <y>439</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>459</y>
     </hint>
    </hints>
   </connection>
@@ -1022,5 +1262,10 @@
   <slot>getItemInfo()</slot>
   <slot>setDisplayType()</slot>
   <slot>viewMember()</slot>
+  <slot>modifyMember()</slot>
+  <slot>displayDues()</slot>
+  <slot>displayExpirationDates()</slot>
+  <slot>displayChangeType()</slot>
+  <slot>displayMemberPurchases()</slot>
  </slots>
 </ui>

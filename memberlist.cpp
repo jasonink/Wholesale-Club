@@ -116,10 +116,25 @@ void MemberList::deleteMember(int n)
     list.remove(n);
 }
 
+void MemberList::addSpent(int member_index, float price)
+{
+    list.modify(member_index).total_spent += price*(1+TAX_RATE/100);
+}
+
+void MemberList::setRebate(int member_index, float rebate)
+{
+    list.modify(member_index).rebate = rebate;
+}
+
 int MemberList::getID(int n) const
 {
     Member test = list.get_n(n);
     return test.id;
+}
+
+std::string MemberList::getName(int id) const
+{
+
 }
 
 

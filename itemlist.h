@@ -16,6 +16,8 @@ struct Item{
         name(n), member_id(i),price(p),quantity(q),purchase_date(Date(m,d,y)){}
 };
 
+//bool operator< (const Item& item_1, const Item &f) {return i >  f.foodID;}
+
 
 class ItemList
 {

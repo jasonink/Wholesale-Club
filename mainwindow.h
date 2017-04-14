@@ -21,6 +21,8 @@ public:
 private:
     void appendMemberToTable(int i);
     void displayMsgBox(std::string message) const;
+    void update_total_spent();
+    void update_rebate();
 
 public slots:
     void listMembers();
@@ -29,10 +31,15 @@ public slots:
     void addMember();
     void deleteMember();
     void viewMember();
+    void modifyMember();
     void saveAll();
     void getItemInfo();
     void setDisplayType();
 
+    void displayDues();
+    void displayExpirationDates();
+    void displayChangeType();
+    void displayMemberPurchases();
 
 private:
     Ui::MainWindow *ui;

@@ -40,6 +40,7 @@ class LinkedList
         void insert_sorted(const E& value);
         void remove_duplicates();
         void remove(int n);
+        E& modify(int n);
 
 
         //Operators----------------------------------------------
@@ -439,6 +440,20 @@ void LinkedList<E>::remove(int n)
         temp->next = temp2->next;
         delete temp2;
     }
+}
+
+template <typename E>
+E &LinkedList<E>::modify(int n)
+{
+    Node<E>* temp = head;
+    int count = 0;
+
+    while (count < n){
+        temp = temp->next;
+        count++;
+    }
+
+    return temp->data;
 }
 
 
