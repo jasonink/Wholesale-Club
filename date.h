@@ -19,6 +19,8 @@ public:
 
     std::string getString() const;
 
+    void operator=(const Date& date);
+
 private:
     int month;
     int day;

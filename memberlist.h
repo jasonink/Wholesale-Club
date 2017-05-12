@@ -30,6 +30,19 @@ struct Member{
         else
             return "default";
     }
+
+    bool operator <( const Member& y) {
+        return name < y.name;
+    }
+
+    void operator= (const Member& m){
+        name = m.name;
+        id = m.id;
+        type = m.type;
+        exp_date = m.exp_date;
+        total_spent = m.total_spent;
+        rebate = m.rebate;
+    }
 };
 
 class MemberList {
@@ -40,10 +53,12 @@ public:
 
     void init_from_file(std::string filename);
     void write_members_to_file(std::string filename);
+    void sort_members();
 
     //Accessors
     Member getMember(int n) const;
     int getID(int n) const;
+    int getID(std::string name) const;
     std::string getName(int id) const;
     int length() const;
     int findMember(std::string name) const;
@@ -51,6 +66,7 @@ public:
 
     //Mutators
     void addMember(std::string name, int id, int type, int exp_month, int exp_day, int exp_year);
+    void addMember(std::string name, int id, int type, int exp_month, int exp_day, int exp_year, float spent, float rb);
     void deleteMember(int n);
     void addSpent(int member_index, float price);
     void setRebate(int member_index, float rebate);

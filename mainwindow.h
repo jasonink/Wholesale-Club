@@ -23,6 +23,7 @@ private:
     void displayMsgBox(std::string message) const;
     void update_total_spent();
     void update_rebate();
+    void sort_items();
 
 public slots:
     void listMembers();
@@ -35,11 +36,15 @@ public slots:
     void saveAll();
     void getItemInfo();
     void setDisplayType();
+    void applyModification();
 
     void displayDues();
     void displayExpirationDates();
     void displayChangeType();
     void displayMemberPurchases();
+    void displayRebates();
+    void displayAllItems();
+
 
 private:
     Ui::MainWindow *ui;
@@ -49,6 +54,9 @@ private:
 
     //Type for functions to display (all: -1, basic: 0, preferred: 1)
     int display_type;
+    //status 0 means not modifying. status 1 means modifying.
+    int modify_status;
+    int delete_member_id;
 };
 
 #endif // MAINWINDOW_H

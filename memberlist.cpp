@@ -1,12 +1,36 @@
 #include "memberlist.h"
 
+/**********************************************************
+ * MemberList::MemberList(): list(){}
+ * _______________________________________________________
+ * Precondition:
+ *  -N/A
+ * Postcondition:
+ *  - Initializes the lists int he memberlists
+**********************************************************/
 MemberList::MemberList(): list(){}
 
+/**********************************************************
+ * MemberList::~MemberList()
+ * _______________________________________________________
+ * Precondition:
+ *  -N/A
+ * Postcondition:
+ *  - Deconstructs Memberlist
+**********************************************************/
 MemberList::~MemberList()
 {
     list.~LinkedList();
 }
 
+/**********************************************************
+ * void MemberList::init_from_file(std::string filename)
+ * _______________________________________________________
+ * Precondition:
+ *  - filename
+ * Postcondition:
+ *  - file intialized
+**********************************************************/
 void MemberList::init_from_file(std::string filename)
 {
     std::ifstream ifile;
@@ -54,6 +78,14 @@ void MemberList::init_from_file(std::string filename)
     ifile.close();
 }
 
+/**********************************************************
+ * void MemberList::write_members_to_file(std::string filename)
+ * _______________________________________________________
+ * Precondition:
+ *  - filename
+ * Postcondition:
+ *  - members written into the list
+**********************************************************/
 void MemberList::write_members_to_file(std::string filename)
 {
     std::ofstream ofile;
@@ -69,24 +101,67 @@ void MemberList::write_members_to_file(std::string filename)
     ofile.close();
 }
 
+void MemberList::sort_members()
+{
+    list.select_sort();
+}
+
+/**********************************************************
+ * Member MemberList::getMember(int n) const
+ * _______________________________________________________
+ * Precondition:
+ *  -n is defiend
+ * Postcondition:
+ *  - returns member object at nth position
+**********************************************************/
 Member MemberList::getMember(int n) const
 {
     Member test = list.get_n(n);
     return test;
 }
 
+/**********************************************************
+ * int MemberList::length() const
+ * _______________________________________________________
+ * Precondition:
+ *  -N/A
+ * Postcondition:
+ *  - returns length of list
+**********************************************************/
 int MemberList::length() const
 {
     return list.length();
 }
 
+/**********************************************************
+ * void MemberList::addMember(std::string name, int id,
+ *      int type, int exp_month, int exp_day, int exp_year)
+ * _______________________________________________________
+ * Precondition:
+ *  - parameters are defiend
+ * Postcondition:
+ *  - adds a new member object to the end of the member list
+**********************************************************/
 void MemberList::addMember(std::string name, int id, int type, int exp_month, int exp_day, int exp_year)
 {
     Member newMember(name,id,type,exp_month,exp_day,exp_year);
     list.push_back(newMember);
 }
 
-//Return -1 if member not found
+void MemberList::addMember(std::string name, int id, int type, int exp_month, int exp_day, int exp_year, float spent, float rb)
+{
+    Member newMember(name,id,type,exp_month,exp_day,exp_year,spent,rb);
+    list.push_back(newMember);
+}
+
+/**********************************************************
+ * int MemberList::findMember(std::string name) const
+ * _______________________________________________________
+ * Precondition:
+ *  - string is defined
+ * Postcondition:
+ *  - returns position at which member is located in the list
+**********************************************************/
 int MemberList::findMember(std::string name) const
 {
 
@@ -99,7 +174,14 @@ int MemberList::findMember(std::string name) const
     return -1;
 }
 
-//Return -1 if member not found
+/**********************************************************
+ * int MemberList::findMember(int id) const
+ * _______________________________________________________
+ * Precondition:
+ *  - id is defined
+ * Postcondition:
+ *  - returns position at which member is located in the list
+**********************************************************/
 int MemberList::findMember(int id) const
 {
     for (int i = 0; i < length(); i ++){
@@ -111,30 +193,91 @@ int MemberList::findMember(int id) const
     return -1;
 }
 
+/**********************************************************
+ * void MemberList::deleteMember(int n)
+ * _______________________________________________________
+ * Precondition:
+ *  - n is defined
+ * Postcondition:
+ *  - calls remove function from list object an nth position
+**********************************************************/
 void MemberList::deleteMember(int n)
 {
     list.remove(n);
 }
 
+/**********************************************************
+ * void MemberList::addSpent(int member_index, float price)
+ * _______________________________________________________
+ * Precondition:
+ *  - index and price are defined
+ * Postcondition:
+ *  - calculates total spent and adds it to list data
+**********************************************************/
 void MemberList::addSpent(int member_index, float price)
 {
     list.modify(member_index).total_spent += price*(1+TAX_RATE/100);
 }
 
+/**********************************************************
+ * void MemberList::setRebate(int member_index, float rebate)
+ * _______________________________________________________
+ * Precondition:
+ *  - member_index and rebate are defined
+ * Postcondition:
+ *  - sets rebate and adds it to list data
+**********************************************************/
 void MemberList::setRebate(int member_index, float rebate)
 {
     list.modify(member_index).rebate = rebate;
 }
 
+/**********************************************************
+ * int MemberList::getID(int n) const
+ * _______________________________________________________
+ * Precondition:
+ *  - n is defined
+ * Postcondition:
+ *  - returns ID at nth position
+**********************************************************/
 int MemberList::getID(int n) const
 {
     Member test = list.get_n(n);
     return test.id;
 }
 
+/**********************************************************
+ * int MemberList::getID(std::string name) const
+ * _______________________________________________________
+ * Precondition:
+ *  - name is defined
+ * Postcondition:
+ *  - returns ID at of member with name name
+**********************************************************/
+int MemberList::getID(std::string name) const
+{
+    int member_index = findMember(name);
+    if (member_index == -1){
+        return 0;
+    }
+    return getMember(member_index).id;
+}
+
+/**********************************************************
+ * std::string MemberList::getName(int id) const
+ * _______________________________________________________
+ * Precondition:
+ *  - id is defined
+ * Postcondition:
+ *  - returns name based off id
+**********************************************************/
 std::string MemberList::getName(int id) const
 {
-
+    int member_index = findMember(id);
+    if (member_index == -1){
+        return 0;
+    }
+    return getMember(member_index).name;
 }
 
 

@@ -63,6 +63,9 @@
       <height>21</height>
      </rect>
     </property>
+    <property name="toolTip">
+     <string/>
+    </property>
     <property name="text">
      <string>Exit</string>
     </property>
@@ -73,24 +76,29 @@
       <x>380</x>
       <y>70</y>
       <width>631</width>
-      <height>461</height>
+      <height>401</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Shree Devanagari 714</family>
+     </font>
     </property>
    </widget>
    <widget class="QPushButton" name="clear">
     <property name="geometry">
      <rect>
-      <x>640</x>
+      <x>700</x>
       <y>530</y>
-      <width>75</width>
-      <height>23</height>
+      <width>121</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="toolTip">
      <string>Clear the table</string>
     </property>
     <property name="text">
-     <string>Clear</string>
+     <string>Clear Table</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -121,8 +129,13 @@
       <height>431</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Shree Devanagari 714</family>
+     </font>
+    </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="memberTab">
      <attribute name="title">
@@ -133,9 +146,12 @@
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>341</width>
+        <width>331</width>
         <height>231</height>
        </rect>
+      </property>
+      <property name="toolTip">
+       <string>Add a member</string>
       </property>
       <property name="title">
        <string>Add Member</string>
@@ -143,7 +159,7 @@
       <widget class="QPushButton" name="addMemberButton">
        <property name="geometry">
         <rect>
-         <x>120</x>
+         <x>110</x>
          <y>200</y>
          <width>100</width>
          <height>20</height>
@@ -215,7 +231,7 @@
         <rect>
          <x>20</x>
          <y>108</y>
-         <width>171</width>
+         <width>181</width>
          <height>21</height>
         </rect>
        </property>
@@ -231,7 +247,7 @@
       <widget class="QRadioButton" name="memberTypeBasicRadio">
        <property name="geometry">
         <rect>
-         <x>220</x>
+         <x>200</x>
          <y>150</y>
          <width>82</width>
          <height>17</height>
@@ -247,7 +263,7 @@
       <widget class="QRadioButton" name="memberTypePreferredRadio">
        <property name="geometry">
         <rect>
-         <x>220</x>
+         <x>200</x>
          <y>170</y>
          <width>82</width>
          <height>17</height>
@@ -260,7 +276,7 @@
       <widget class="QLineEdit" name="AddNameBox">
        <property name="geometry">
         <rect>
-         <x>220</x>
+         <x>200</x>
          <y>30</y>
          <width>113</width>
          <height>21</height>
@@ -273,7 +289,7 @@
       <widget class="QLineEdit" name="AddMemberNumBox">
        <property name="geometry">
         <rect>
-         <x>220</x>
+         <x>200</x>
          <y>70</y>
          <width>113</width>
          <height>21</height>
@@ -286,7 +302,7 @@
       <widget class="QLineEdit" name="addMemberExpBox">
        <property name="geometry">
         <rect>
-         <x>220</x>
+         <x>200</x>
          <y>110</y>
          <width>113</width>
          <height>21</height>
@@ -302,8 +318,8 @@
        <rect>
         <x>10</x>
         <y>250</y>
-        <width>341</width>
-        <height>131</height>
+        <width>331</width>
+        <height>151</height>
        </rect>
       </property>
       <property name="title">
@@ -312,8 +328,8 @@
       <widget class="QPushButton" name="deleteMemberButton">
        <property name="geometry">
         <rect>
-         <x>230</x>
-         <y>100</y>
+         <x>10</x>
+         <y>130</y>
          <width>100</width>
          <height>20</height>
         </rect>
@@ -322,6 +338,9 @@
         <font>
          <family>Shree Devanagari 714</family>
         </font>
+       </property>
+       <property name="toolTip">
+        <string>Delete the member from the list</string>
        </property>
        <property name="text">
         <string>Delete Member</string>
@@ -387,7 +406,7 @@
         <rect>
          <x>10</x>
          <y>100</y>
-         <width>100</width>
+         <width>101</width>
          <height>20</height>
         </rect>
        </property>
@@ -395,17 +414,23 @@
         <font>
          <family>Shree Devanagari 714</family>
         </font>
+       </property>
+       <property name="toolTip">
+        <string>See the members information</string>
        </property>
        <property name="text">
         <string>View Info</string>
        </property>
       </widget>
       <widget class="QPushButton" name="ModifyMemberButton">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="geometry">
         <rect>
-         <x>120</x>
+         <x>180</x>
          <y>100</y>
-         <width>100</width>
+         <width>121</width>
          <height>20</height>
         </rect>
        </property>
@@ -414,19 +439,37 @@
          <family>Shree Devanagari 714</family>
         </font>
        </property>
+       <property name="toolTip">
+        <string>Modify the members information</string>
+       </property>
        <property name="text">
         <string>Modify</string>
        </property>
       </widget>
-      <zorder>deleteMemberButton</zorder>
-      <zorder>RemoveNameBox</zorder>
-      <zorder>RemoveMemberNumBox</zorder>
-      <zorder>deleteMemberNameRadio</zorder>
-      <zorder>deleteMemberIDRadio</zorder>
-      <zorder>deleteMemberButton_2</zorder>
-      <zorder>ModifyMemberButton</zorder>
-      <zorder>pushButton</zorder>
-      <zorder>DisplayOptionsGroupBox</zorder>
+      <widget class="QPushButton" name="ApplyModifyMemberButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>130</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Shree Devanagari 714</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Modify the members information</string>
+       </property>
+       <property name="text">
+        <string>Apply Modification</string>
+       </property>
+      </widget>
      </widget>
      <zorder>groupBox_2</zorder>
      <zorder>memberGroupBox</zorder>
@@ -439,9 +482,9 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>80</y>
-        <width>341</width>
-        <height>71</height>
+        <y>10</y>
+        <width>331</width>
+        <height>61</height>
        </rect>
       </property>
       <property name="toolTip">
@@ -454,7 +497,7 @@
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>40</y>
+         <y>30</y>
          <width>46</width>
          <height>13</height>
         </rect>
@@ -471,7 +514,7 @@
       <widget class="QPushButton" name="ItemPriceButton">
        <property name="geometry">
         <rect>
-         <x>220</x>
+         <x>210</x>
          <y>30</y>
          <width>100</width>
          <height>20</height>
@@ -492,6 +535,128 @@
        </property>
       </widget>
      </widget>
+    </widget>
+    <widget class="QWidget" name="reportTab">
+     <attribute name="title">
+      <string>Reports</string>
+     </attribute>
+     <widget class="QGroupBox" name="ViewMemberPurchasesGroupBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>150</y>
+        <width>331</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Shree Devanagari 714</family>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string>View all the purchases of this member</string>
+      </property>
+      <property name="title">
+       <string>Find Member's Purchases</string>
+      </property>
+      <widget class="QLineEdit" name="ViewMemberPurchaseNameBox">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>30</y>
+         <width>131</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Shree Devanagari 714</family>
+        </font>
+       </property>
+       <property name="placeholderText">
+        <string>First Last</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="ViewMemberPurchaseIDBox">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>60</y>
+         <width>131</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Shree Devanagari 714</family>
+        </font>
+       </property>
+       <property name="placeholderText">
+        <string>#####</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="ViewMemberPuchasesNameRadio">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>30</y>
+         <width>100</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Shree Devanagari 714</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Name:</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="ViewMemberPurchasesIDRadio">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>60</y>
+         <width>100</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Shree Devanagari 714</family>
+        </font>
+       </property>
+       <property name="text">
+        <string>Member ID:</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="ViewMemberPurchaseButton">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>100</y>
+         <width>111</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Shree Devanagari 714</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>View all the purchases of this member</string>
+       </property>
+       <property name="text">
+        <string>View Purchases</string>
+       </property>
+      </widget>
+     </widget>
      <widget class="QGroupBox" name="displayItemBox">
       <property name="geometry">
        <rect>
@@ -502,24 +667,11 @@
        </rect>
       </property>
       <property name="toolTip">
-       <string>View the items for a specified day</string>
+       <string>View the sales report for a specified day</string>
       </property>
       <property name="title">
-       <string>Display Sales by Day</string>
+       <string>Display Sales Report</string>
       </property>
-      <widget class="QPushButton" name="displayItemsButton">
-       <property name="geometry">
-        <rect>
-         <x>190</x>
-         <y>30</y>
-         <width>141</width>
-         <height>32</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Display Items</string>
-       </property>
-      </widget>
       <widget class="QLabel" name="label_4">
        <property name="geometry">
         <rect>
@@ -543,239 +695,12 @@
         </rect>
        </property>
       </widget>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="reportTab">
-     <attribute name="title">
-      <string>Reports</string>
-     </attribute>
-     <widget class="QGroupBox" name="groupBox">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>341</width>
-        <height>151</height>
-       </rect>
-      </property>
-      <property name="title">
-       <string>Print</string>
-      </property>
-      <widget class="QPushButton" name="rebateButton">
+      <widget class="QPushButton" name="displayItemsButton">
        <property name="geometry">
         <rect>
-         <x>211</x>
+         <x>200</x>
          <y>30</y>
          <width>121</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Print Rebate</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="totalPurchasesButton">
-       <property name="geometry">
-        <rect>
-         <x>210</x>
-         <y>58</y>
-         <width>121</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Total Purchases</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="viewReportButton">
-       <property name="geometry">
-        <rect>
-         <x>210</x>
-         <y>83</y>
-         <width>121</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>View Sales Report</string>
-       </property>
-      </widget>
-      <widget class="QPlainTextEdit" name="plainTextEdit">
-       <property name="geometry">
-        <rect>
-         <x>70</x>
-         <y>30</y>
-         <width>101</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="placeholderText">
-        <string>MM/DD/YYYY</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="dateLabel">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>30</y>
-         <width>46</width>
-         <height>15</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>13</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Date:</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="viewDuesButton">
-       <property name="geometry">
-        <rect>
-         <x>210</x>
-         <y>110</y>
-         <width>121</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Dues Paid</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QPushButton" name="DisplayExpDatesButton">
-      <property name="geometry">
-       <rect>
-        <x>220</x>
-        <y>180</y>
-        <width>121</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Expiration Dates</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="DisplayExpDatesBox">
-      <property name="geometry">
-       <rect>
-        <x>70</x>
-        <y>180</y>
-        <width>113</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="placeholderText">
-       <string>mm</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_5">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>180</y>
-        <width>60</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Month:</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="DisplayChangeTypeButton">
-      <property name="geometry">
-       <rect>
-        <x>200</x>
-        <y>220</y>
-        <width>141</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Change Membership</string>
-      </property>
-     </widget>
-     <widget class="QGroupBox" name="ViewMemberPurchasesGroupBox">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>260</y>
-        <width>341</width>
-        <height>131</height>
-       </rect>
-      </property>
-      <property name="title">
-       <string>Find Member's Purchases</string>
-      </property>
-      <widget class="QLineEdit" name="ViewMemberPurchaseNameBox">
-       <property name="geometry">
-        <rect>
-         <x>170</x>
-         <y>30</y>
-         <width>131</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="placeholderText">
-        <string>First Last</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="ViewMemberPurchaseIDBox">
-       <property name="geometry">
-        <rect>
-         <x>170</x>
-         <y>60</y>
-         <width>131</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="placeholderText">
-        <string>#####</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="ViewMemberPuchasesNameRadio">
-       <property name="geometry">
-        <rect>
-         <x>50</x>
-         <y>30</y>
-         <width>100</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Name:</string>
-       </property>
-       <property name="checked">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="ViewMemberPurchasesIDRadio">
-       <property name="geometry">
-        <rect>
-         <x>50</x>
-         <y>60</y>
-         <width>100</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Member ID:</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="ViewMemberPurchaseButton">
-       <property name="geometry">
-        <rect>
-         <x>100</x>
-         <y>100</y>
-         <width>111</width>
          <height>20</height>
         </rect>
        </property>
@@ -785,7 +710,167 @@
         </font>
        </property>
        <property name="text">
-        <string>View Purchases</string>
+        <string>Show Reports</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>331</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Display whose membership expires in this month</string>
+      </property>
+      <property name="title">
+       <string>Check Expiration Dates</string>
+      </property>
+      <widget class="QLineEdit" name="DisplayExpDatesBox">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>30</y>
+         <width>113</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>mm</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>60</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Month:</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="DisplayExpDatesButton">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>30</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Expiration Dates</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>290</y>
+        <width>331</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Shree Devanagari 714</family>
+       </font>
+      </property>
+      <property name="title">
+       <string>Member Info Reports</string>
+      </property>
+      <widget class="QPushButton" name="viewDuesButton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>141</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Shree Devanagari 714</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Display amounts due for memberships</string>
+       </property>
+       <property name="text">
+        <string>Amounts Due</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="DisplayChangeTypeButton">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>40</y>
+         <width>141</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Shree Devanagari 714</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Display members who should change membership type</string>
+       </property>
+       <property name="text">
+        <string>Change Membership</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="rebateButton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>141</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Shree Devanagari 714</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Display rebate amounts for preferred members</string>
+       </property>
+       <property name="text">
+        <string>Rebates</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>70</y>
+         <width>141</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Shree Devanagari 714</family>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Display info for all items</string>
+       </property>
+       <property name="text">
+        <string>Total Item Sales</string>
        </property>
       </widget>
      </widget>
@@ -814,9 +899,9 @@
     <property name="geometry">
      <rect>
       <x>830</x>
-      <y>540</y>
+      <y>530</y>
       <width>81</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="toolTip">
@@ -835,6 +920,11 @@
       <height>101</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Shree Devanagari 714</family>
+     </font>
+    </property>
     <property name="toolTip">
      <string>Select which member type you would like to view in reports</string>
     </property>
@@ -849,6 +939,11 @@
        <width>100</width>
        <height>20</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Shree Devanagari 714</family>
+      </font>
      </property>
      <property name="text">
       <string>All</string>
@@ -866,6 +961,11 @@
        <height>20</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Shree Devanagari 714</family>
+      </font>
+     </property>
      <property name="text">
       <string>Basic</string>
      </property>
@@ -879,29 +979,15 @@
        <height>20</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Shree Devanagari 714</family>
+      </font>
+     </property>
      <property name="text">
       <string>Preferred</string>
      </property>
     </widget>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>170</x>
-      <y>460</y>
-      <width>181</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Shree Devanagari 714</family>
-      <pointsize>17</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Display Members</string>
-    </property>
    </widget>
    <widget class="QLabel" name="TableTitle">
     <property name="geometry">
@@ -926,6 +1012,177 @@
     </property>
     <property name="text">
      <string>Table Title</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>469</y>
+      <width>211</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Shree Devanagari 714</family>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>Report Information</string>
+    </property>
+    <property name="title">
+     <string>Information</string>
+    </property>
+    <widget class="QLabel" name="PreferredShoppersLabel">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>30</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Shree Devanagari 714</family>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
+     <property name="text">
+      <string>Preferred Shoppers</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="BasicShoppersLabel">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>101</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Shree Devanagari 714</family>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
+     <property name="text">
+      <string>Basic Shoppers</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="TotalRevenueLabel">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>70</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Shree Devanagari 714</family>
+      </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>Total Revenue</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="PreferredShoppersAmount">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>30</y>
+       <width>60</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Shree Devanagari 714</family>
+      </font>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="BasicShoppersAmount">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>50</y>
+       <width>60</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Shree Devanagari 714</family>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="TotalRevenueAmount">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>70</y>
+       <width>60</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Shree Devanagari 714</family>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>490</y>
+      <width>141</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Shree Devanagari 714</family>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>Display members</string>
+    </property>
+    <property name="text">
+     <string>Display Members</string>
     </property>
    </widget>
   </widget>
@@ -962,18 +1219,12 @@
   <tabstop>deleteMemberIDRadio</tabstop>
   <tabstop>RemoveMemberNumBox</tabstop>
   <tabstop>deleteMemberButton</tabstop>
-  <tabstop>pushButton</tabstop>
-  <tabstop>displayItemCombo</tabstop>
-  <tabstop>displayItemsButton</tabstop>
   <tabstop>ItemPriceButton</tabstop>
-  <tabstop>viewReportButton</tabstop>
   <tabstop>pushButton_2</tabstop>
   <tabstop>tableWidget</tabstop>
   <tabstop>clear</tabstop>
-  <tabstop>totalPurchasesButton</tabstop>
   <tabstop>rebateButton</tabstop>
   <tabstop>saveAllButton</tabstop>
-  <tabstop>plainTextEdit</tabstop>
   <tabstop>tabWidget</tabstop>
  </tabstops>
  <resources/>
@@ -1001,8 +1252,8 @@
    <slot>tableClear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>675</x>
-     <y>587</y>
+     <x>785</x>
+     <y>597</y>
     </hint>
     <hint type="destinationlabel">
      <x>633</x>
@@ -1033,28 +1284,12 @@
    <slot>deleteMember()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>253</x>
-     <y>430</y>
+     <x>46</x>
+     <y>470</y>
     </hint>
     <hint type="destinationlabel">
      <x>355</x>
      <y>586</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>displayItemsButton</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>listItems()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>290</x>
-     <y>116</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>349</x>
-     <y>42</y>
     </hint>
    </hints>
   </connection>
@@ -1081,8 +1316,8 @@
    <slot>getItemInfo()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>293</x>
-     <y>193</y>
+     <x>283</x>
+     <y>123</y>
     </hint>
     <hint type="destinationlabel">
      <x>383</x>
@@ -1119,22 +1354,6 @@
     <hint type="destinationlabel">
      <x>13</x>
      <y>571</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>listMembers()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>218</x>
-     <y>535</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>701</x>
-     <y>99</y>
     </hint>
    </hints>
   </connection>
@@ -1177,8 +1396,8 @@
    <slot>modifyMember()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>180</x>
-     <y>435</y>
+     <x>243</x>
+     <y>440</y>
     </hint>
     <hint type="destinationlabel">
      <x>5</x>
@@ -1193,8 +1412,8 @@
    <slot>displayDues()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>282</x>
-     <y>209</y>
+     <x>82</x>
+     <y>419</y>
     </hint>
     <hint type="destinationlabel">
      <x>379</x>
@@ -1209,8 +1428,8 @@
    <slot>displayExpirationDates()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>270</x>
-     <y>262</y>
+     <x>260</x>
+     <y>192</y>
     </hint>
     <hint type="destinationlabel">
      <x>1</x>
@@ -1225,8 +1444,8 @@
    <slot>displayChangeType()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>246</x>
-     <y>301</y>
+     <x>226</x>
+     <y>411</y>
     </hint>
     <hint type="destinationlabel">
      <x>1</x>
@@ -1242,11 +1461,91 @@
    <hints>
     <hint type="sourcelabel">
      <x>166</x>
-     <y>439</y>
+     <y>329</y>
     </hint>
     <hint type="destinationlabel">
      <x>7</x>
      <y>459</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rebateButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>displayRebates()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>72</x>
+     <y>439</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>137</x>
+     <y>483</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>displayItemsButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>listItems()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>317</x>
+     <y>124</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>380</x>
+     <y>35</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>listMembers()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>253</x>
+     <y>528</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>289</x>
+     <y>582</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>displayAllItems()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>260</x>
+     <y>440</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>224</x>
+     <y>587</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ApplyModifyMemberButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>applyModification()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>272</x>
+     <y>458</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>382</y>
     </hint>
    </hints>
   </connection>
@@ -1267,5 +1566,8 @@
   <slot>displayExpirationDates()</slot>
   <slot>displayChangeType()</slot>
   <slot>displayMemberPurchases()</slot>
+  <slot>displayRebates()</slot>
+  <slot>displayAllItems()</slot>
+  <slot>applyModification()</slot>
  </slots>
 </ui>

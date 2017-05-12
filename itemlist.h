@@ -14,6 +14,18 @@ struct Item{
 
     Item(std::string n = "default", int i = 0, float p = 0, int q = 0, int m = 0, int d = 0, int y = 0):
         name(n), member_id(i),price(p),quantity(q),purchase_date(Date(m,d,y)){}
+
+    bool operator<(const Item& item){
+        return name < item.name;
+    }
+
+    void operator=(const Item& item){
+        name = item.name;
+        member_id = item.member_id;
+        price = item.price;
+        quantity = item.quantity;
+        purchase_date = item.purchase_date;
+    }
 };
 
 //bool operator< (const Item& item_1, const Item &f) {return i >  f.foodID;}
@@ -27,6 +39,7 @@ public:
     Item get_item(int n) const;
 
     bool init_from_file(std::string filename);
+    void sort_items();
 
 private:
     LinkedList<Item> list;

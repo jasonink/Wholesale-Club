@@ -1,22 +1,56 @@
 #include "itemlist.h"
 
-ItemList::ItemList()
+/**********************************************************
+ * ItemList::ItemList()
+ * _______________________________________________________
+ * Precondition:
+ *  -N/A
+ * Postcondition:
+ *  -Initializes Item list
+**********************************************************/
+ItemList::ItemList(): list(LinkedList<Item>())
 {
 
 }
 
+/**********************************************************
+ * int ItemList::length() const
+ * _______________________________________________________
+ * Precondition:
+ *  -N/A
+ * Postcondition:
+ *  -Returns length of list(number of items)
+**********************************************************/
 int ItemList::length() const
 {
     return list.length();
 }
 
+/**********************************************************
+ * Item ItemList::get_item(int n) const
+ * _______________________________________________________
+ * Precondition:
+ *  -n is defined
+ * Postcondition:
+ *  -Returns item at nth position in the list
+**********************************************************/
 Item ItemList::get_item(int n) const
 {
     Item test = list.get_n(n);
     return test;
 }
 
-//Returns true if success, false if no file was opened
+/**********************************************************
+ * bool ItemList::init_from_file(std::string filename)
+ * _______________________________________________________
+ * Precondition:
+ *  -file name is defined
+ *  -file name exists
+ * Postcondition:
+ *  -Initializes item data(date,id,name,price,quantity)
+ *  from file, and returns true if sucess, false if no
+ *  file was opened
+**********************************************************/
 bool ItemList::init_from_file(std::string filename)
 {
     std::ifstream ifile;
@@ -62,4 +96,17 @@ bool ItemList::init_from_file(std::string filename)
     ifile.close();
     return true;
 
+}
+
+/**********************************************************
+ * Item ItemList::get_item(int n) const
+ * _______________________________________________________
+ * Precondition:
+ *  -list is intialized
+ * Postcondition:
+ *  -list is sorted by alphabetical order of names
+**********************************************************/
+void ItemList::sort_items()
+{
+    list.select_sort();
 }

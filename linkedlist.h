@@ -41,6 +41,7 @@ class LinkedList
         void remove_duplicates();
         void remove(int n);
         E& modify(int n);
+        void insertAt(int data, int pos);
 
 
         //Operators----------------------------------------------
@@ -275,7 +276,7 @@ void LinkedList<E>::select_sort()
     }
     //If there are 2 or more elements, run the selection sort algorithm
     else{
-        int min;                                //Temp int to store min datavalue
+        E min;                                //Temp int to store min datavalue
 
         //Loop through every node in the LinkedList
         for (Node<E>* i = head; i != tail; i = i->next){
@@ -501,32 +502,6 @@ int LinkedList<E>::countNodes(Node<E>* ptr) const
 }
 
 
-/************************************************************************
- * showReverse
- * --------------------------------------------------------------------
- * recursively prints out the data values of the elements in the list
- * in reverse order from the end to ptr
- * ---------------------------------------------------------------
- * PRE-CONDITION:
- *      head and tail defined
- *      Node pointer ptr
- * POST-CONDITION:
- *      prints out the data values of each element in the list, from
- *      the end to ptr
- *
-************************************************************************/
-/*
-void LinkedList::showReverse(Node<E> ptr) const
-{
-    if (ptr == NULL){
-        return;
-    }
-    else{
-        showReverse(ptr->next);
-        cout << ptr->data << " ";
-    }
-}
-*/
 
 /************************************************************************
  * emptyList
@@ -579,12 +554,49 @@ LinkedList<E> & LinkedList<E>::operator=(const LinkedList<E> &source)
     if (source.head == 0){
     }
     else{
-        for ( Node<E> ptr = source.head; ptr != 0; ptr = ptr->next){
+        for ( Node<E>* ptr = source.head; ptr != 0; ptr = ptr->next){
             push_back(ptr->data);
         }
     }
+
+    return *this;
 }
 
-
+//insert node at certain pos
+template <typename E>
+void LinkedList<E>::insertAt(int data, int pos)
+{
+    Node<E> *temp;
+    temp->next = NULL;
+    temp->data = data;
+    Node<E> *cur;
+    int i = 0;
+    if(pos == 0)
+    {
+        if(head == NULL)
+            head = temp;
+        else
+        {
+            temp->next = head;
+            head = temp;
+        }
+    }
+    else
+    {
+        Node<E> *temp2;
+        temp2 = head;
+        while(i !=(pos - 1))
+        {
+            temp2 = temp2->next;
+            i++;
+        }
+        cur = temp2->next;
+        temp2->next = temp;
+        temp->next = cur;
+        temp2 = NULL;
+        delete temp2;
+    }
+    return head;
+}
 
 #endif // LINKEDLIST_H
